@@ -8,7 +8,7 @@
 
 #import "ChooseViewController.h"
 
-@interface ChooseViewController ()
+@interface ChooseViewController () <UITextFieldDelegate>
 
 @end
 
@@ -29,31 +29,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        puts("Criteria");
-        [self.consultaController selectSearchCriteria:1];
+    [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
+    [self.consultaController reloadBaseUrlOnCompletion:^(NSError *error) {
+        [SVProgressHUD dismiss];
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    }];
+    
+    return;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+    [self.consultaController selectSearchCriteria:1 onCompletion:^(NSError *error) {
+       
+        if (!error) {
             
-            puts("Plate");
-            [self.consultaController setPlate:@"TPY227"];
+            [self.consultaController setPlate:textField.text onCompletion:^(NSError *error) {
+                [SVProgressHUD dismiss];
+                
+                if (!error) {
+                    puts("finished");
+                } else {
+                    puts("finished with error");
+                }
+                
+            }];
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                
-                puts("Address");
-                [self.consultaController selectAddress:2];
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    
-                    puts("PDF");
-                    [self.consultaController openPDFAtIndex:0];
-                    
-                });
-                
-            });
+        } else {
             
-        });
-    });
+            [SVProgressHUD dismiss];
+        }
+        
+    }];
+    
+    return [textField resignFirstResponder];
 }
 
 #pragma mark - Memory

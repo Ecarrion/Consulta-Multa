@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChooseViewController : UIViewController
+@interface ChooseViewController : UIViewController {
+    
+    
+    __weak IBOutlet UITextField *plateTextField;
+    
+}
 
 @end

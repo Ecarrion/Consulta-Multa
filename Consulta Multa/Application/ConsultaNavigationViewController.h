@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^webCompletionBlock)(NSError * error);
+
 @interface ConsultaNavigationViewController : UINavigationController
 
+-(void)reloadBaseUrlOnCompletion:(webCompletionBlock)block;
+-(void)selectSearchCriteria:(NSInteger)number onCompletion:(webCompletionBlock)block;
+-(void)setPlate:(NSString *)plate onCompletion:(webCompletionBlock)block;
+-(void)selectAddress:(NSInteger)addresIndex onCompletion:(webCompletionBlock)block;
+-(void)openPDFAtIndex:(NSInteger)index onCompletion:(webCompletionBlock)block;
 
--(void)selectSearchCriteria:(NSInteger)number;
--(void)setPlate:(NSString *)plate;
--(void)selectAddress:(NSInteger)addresIndex;
--(void)openPDFAtIndex:(NSInteger)index;
+
+-(NSArray *)getAddresses;
 
 @end

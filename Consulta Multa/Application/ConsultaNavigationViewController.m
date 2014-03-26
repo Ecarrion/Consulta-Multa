@@ -13,6 +13,7 @@
 @interface ConsultaNavigationViewController () <UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView * webView;
+@property (nonatomic, copy) webCompletionBlock completionlBlock;
 
 @end
 
@@ -22,7 +23,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
         // Custom initialization
+        self.navigationBar.translucent = NO;
     }
     return self;
 }
@@ -35,21 +38,25 @@
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.webView.delegate = self;
     self.webView.userInteractionEnabled = NO;
-    self.webView.alpha = 0.7;
+    self.webView.alpha = 0.4;
     self.webView.scalesPageToFit = YES;
     [self.view addSubview:self.webView];
     
-    [self reloadBaseUrl];
 }
 
--(void)reloadBaseUrl {
+-(void)reloadBaseUrlOnCompletion:(webCompletionBlock)block {
+    
+    self.completionlBlock = block;
     
     NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:FOTOMULTAS_BASE_URL]];
     [self.webView loadRequest:request];
 }
 
 #pragma mark - Foto multa methods
--(void)selectSearchCriteria:(NSInteger)number {
+
+-(void)selectSearchCriteria:(NSInteger)number  onCompletion:(webCompletionBlock)block {
+    
+    self.completionlBlock = block;
     
     NSString * line1 = @"select = document.getElementsByName(\"criterioBusqueda\")[0];";
     NSString * line2 = [NSString stringWithFormat:@"select.options[%d].selected = true;", number];
@@ -59,7 +66,9 @@
     [self.webView stringByEvaluatingJavaScriptFromString:js];
 }
 
--(void)setPlate:(NSString *)plate {
+-(void)setPlate:(NSString *)plate onCompletion:(webCompletionBlock)block {
+    
+    self.completionlBlock = block;
     
     NSString * line1 = @"placa = document.getElementsByName(\"placa\")[0];";
     NSString * line2 = [NSString stringWithFormat:@"placa.value = \"%@\";", plate];
@@ -70,25 +79,33 @@
     [self.webView stringByEvaluatingJavaScriptFromString:js];
 }
 
--(void)selectAddress:(NSInteger)addresIndex {
+-(void)selectAddress:(NSInteger)addresIndex onCompletion:(webCompletionBlock)block {
+    
+    self.completionlBlock = block;
     
     NSString * line1 = @"radios = document.getElementsByName(\"direccionSeleccionada\");";
     NSString * line2 = [NSString stringWithFormat:@"radios[%d].checked = true;", addresIndex];
     NSString * line3 = @"consultarBut = document.getElementsByClassName(\"button\")[0];";
     NSString * line4 =  @"consultarBut.click();";
-    //NSString * line4 =  @"";
     NSString * js = [NSString stringWithFormat:@"%@ %@ %@ %@", line1, line2, line3, line4];
     
     [self.webView stringByEvaluatingJavaScriptFromString:js];
 }
 
--(void)openPDFAtIndex:(NSInteger)index {
+-(void)openPDFAtIndex:(NSInteger)index onCompletion:(webCompletionBlock)block {
+    
+    self.completionlBlock = block;
     
     NSString * line1 = [NSString stringWithFormat:@"pdfLink = document.getElementById(\"resultados2\").getElementsByTagName(\"a\")[%d];", index];
     NSString * line2 = @"pdfLink.click();";
     NSString * js = [NSString stringWithFormat:@"%@ %@", line1, line2];
     
     [self.webView stringByEvaluatingJavaScriptFromString:js];
+}
+
+-(NSArray *)getAddresses {
+    
+    return nil;
 }
 
 #pragma mark - WebView
@@ -101,17 +118,28 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     
-    puts("start");
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
     puts("finish");
+    if (self.completionlBlock) {
+        webCompletionBlock block = [self.completionlBlock copy];
+        self.completionlBlock = nil;
+        block(nil);
+        block = nil;
+    }
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     
     puts("fail");
+    if (self.completionlBlock) {
+        webCompletionBlock block = [self.completionlBlock copy];
+        self.completionlBlock = nil;
+        block(error);
+        block = nil;
+    }
 }
 
 
