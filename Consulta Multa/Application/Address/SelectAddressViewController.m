@@ -30,7 +30,26 @@
 {
     [super viewDidLoad];
     self.addresses = [self.consultaController getAddresses];
+    if (!self.addresses) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Enhorabuena!" message:@"No tienes fotomultas" delegate:nil cancelButtonTitle:@"Continuar" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
+
+- (IBAction)goPressed:(id)sender {
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    NSInteger index = [addressTableView indexPathForSelectedRow].row;
+    [self.consultaController selectAddress:index onCompletion:^(NSError *error) {
+        [SVProgressHUD dismiss];
+        
+        if (!error) {
+            puts("finished with no error");
+        }
+        
+    }];
+}
+
 
 #pragma mark - Table View
 

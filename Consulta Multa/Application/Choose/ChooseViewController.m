@@ -30,13 +30,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
     [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
     [self.consultaController reloadBaseUrlOnCompletion:^(NSError *error) {
         [SVProgressHUD dismiss];
         
     }];
     
-    return;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -56,6 +59,7 @@
                     [self.navigationController pushViewController:savc animated:YES];
                     
                 } else {
+                    
                     puts("finished with error");
                 }
                 

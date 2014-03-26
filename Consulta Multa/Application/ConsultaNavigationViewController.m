@@ -38,7 +38,7 @@
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.webView.delegate = self;
     self.webView.userInteractionEnabled = NO;
-    self.webView.alpha = 0;
+    self.webView.alpha = 0.4;
     self.webView.scalesPageToFit = YES;
     [self.view addSubview:self.webView];
     
@@ -132,7 +132,10 @@
     NSArray * array1 = [result1 componentsSeparatedByString:@","];
     NSArray * array2 = [result2 componentsSeparatedByString:@","];
     
-    return @[array1[0], array2[0], array1[1], array2[1], array1[2]];
+    if (array1.count >= 3 && array2.count >= 2)
+        return @[array1[0], array2[0], array1[1], array2[1], array1[2]];
+    
+    return nil;
 }
 
 #pragma mark - WebView
