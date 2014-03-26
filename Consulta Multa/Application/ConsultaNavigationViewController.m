@@ -38,7 +38,7 @@
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.webView.delegate = self;
     self.webView.userInteractionEnabled = NO;
-    self.webView.alpha = 0.4;
+    self.webView.alpha = 0;
     self.webView.scalesPageToFit = YES;
     [self.view addSubview:self.webView];
     
@@ -105,7 +105,34 @@
 
 -(NSArray *)getAddresses {
     
-    return nil;
+    NSString * js1 =
+    @"address1 = [];"
+    @"tds1 = document.querySelectorAll(\"td.franjaGris\");"
+    @"for (var i = 0; i < tds1.length; i++) { "
+    @"  if (tds1[i].innerText.length > 0) { "
+    @"      address1.push(tds1[i].innerText);"
+    @"  }"
+    @"}"
+    @"address1.toString();";
+    
+    NSString * js2 =
+    @"address2 = [];"
+    @"tds2 = document.querySelectorAll(\"td.franjaBlanco\");"
+    @"tds2 = tds2[0].getElementsByClassName(\"franjaBlanco\");"
+    @"for (var i = 0; i < tds2.length; i++) { "
+    @"  if (tds2[i].innerText.length > 0) { "
+    @"      address2.push(tds2[i].innerText);"
+    @"  }"
+    @"}"
+    @"address2.toString();";
+    
+    NSString * result1 = [self.webView stringByEvaluatingJavaScriptFromString:js1];
+    NSString * result2 = [self.webView stringByEvaluatingJavaScriptFromString:js2];
+    
+    NSArray * array1 = [result1 componentsSeparatedByString:@","];
+    NSArray * array2 = [result2 componentsSeparatedByString:@","];
+    
+    return @[array1[0], array2[0], array1[1], array2[1], array1[2]];
 }
 
 #pragma mark - WebView

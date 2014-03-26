@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26064E5218E35C1F007E99C0 /* SelectAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26064E5018E35C1F007E99C0 /* SelectAddressViewController.m */; };
+		26064E5318E35C1F007E99C0 /* SelectAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26064E5118E35C1F007E99C0 /* SelectAddressViewController.xib */; };
 		26595A9D18E3219500EF6AEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595A9C18E3219500EF6AEC /* Foundation.framework */; };
 		26595A9F18E3219500EF6AEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595A9E18E3219500EF6AEC /* CoreGraphics.framework */; };
 		26595AA118E3219500EF6AEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595AA018E3219500EF6AEC /* UIKit.framework */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26064E4F18E35C1F007E99C0 /* SelectAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectAddressViewController.h; path = Address/SelectAddressViewController.h; sourceTree = "<group>"; };
+		26064E5018E35C1F007E99C0 /* SelectAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectAddressViewController.m; path = Address/SelectAddressViewController.m; sourceTree = "<group>"; };
+		26064E5118E35C1F007E99C0 /* SelectAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectAddressViewController.xib; path = Address/SelectAddressViewController.xib; sourceTree = "<group>"; };
 		26595A9918E3219500EF6AEC /* Consulta Multa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Consulta Multa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26595A9C18E3219500EF6AEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26595A9E18E3219500EF6AEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26064E5418E35C27007E99C0 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				26064E4F18E35C1F007E99C0 /* SelectAddressViewController.h */,
+				26064E5018E35C1F007E99C0 /* SelectAddressViewController.m */,
+				26064E5118E35C1F007E99C0 /* SelectAddressViewController.xib */,
+			);
+			name = Address;
+			sourceTree = "<group>";
+		};
 		26595A9018E3219500EF6AEC = {
 			isa = PBXGroup;
 			children = (
@@ -168,18 +183,20 @@
 				26595AD518E32F1200EF6AEC /* Utils */,
 				26595AD218E3283B00EF6AEC /* ConsultaNavigationViewController.h */,
 				26595AD318E3283B00EF6AEC /* ConsultaNavigationViewController.m */,
-				26595ACC18E3267C00EF6AEC /* Choose */,
+				26595ACC18E3267C00EF6AEC /* Choose Criteria */,
+				26064E5418E35C27007E99C0 /* Address */,
 			);
 			path = Application;
 			sourceTree = "<group>";
 		};
-		26595ACC18E3267C00EF6AEC /* Choose */ = {
+		26595ACC18E3267C00EF6AEC /* Choose Criteria */ = {
 			isa = PBXGroup;
 			children = (
 				26595ACD18E326A100EF6AEC /* ChooseViewController.h */,
 				26595ACE18E326A100EF6AEC /* ChooseViewController.m */,
 				26595ACF18E326A100EF6AEC /* ChooseViewController.xib */,
 			);
+			name = "Choose Criteria";
 			path = Choose;
 			sourceTree = "<group>";
 		};
@@ -270,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26595AA718E3219500EF6AEC /* InfoPlist.strings in Resources */,
+				26064E5318E35C1F007E99C0 /* SelectAddressViewController.xib in Resources */,
 				26595AD118E326A100EF6AEC /* ChooseViewController.xib in Resources */,
 				26595AAF18E3219500EF6AEC /* Images.xcassets in Resources */,
 			);
@@ -328,6 +346,7 @@
 				26595AD818E32F7200EF6AEC /* UIViewController+Consulta.m in Sources */,
 				26595AAD18E3219500EF6AEC /* AppDelegate.m in Sources */,
 				26595AA918E3219500EF6AEC /* main.m in Sources */,
+				26064E5218E35C1F007E99C0 /* SelectAddressViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

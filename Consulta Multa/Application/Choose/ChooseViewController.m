@@ -7,6 +7,7 @@
 //
 
 #import "ChooseViewController.h"
+#import "SelectAddressViewController.h"
 
 @interface ChooseViewController () <UITextFieldDelegate>
 
@@ -50,7 +51,10 @@
                 [SVProgressHUD dismiss];
                 
                 if (!error) {
-                    puts("finished");
+                    
+                    SelectAddressViewController * savc = [[SelectAddressViewController alloc] init];
+                    [self.navigationController pushViewController:savc animated:YES];
+                    
                 } else {
                     puts("finished with error");
                 }
