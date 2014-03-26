@@ -141,20 +141,56 @@
 
 -(NSArray *)getFines {
     
-    //document.getElementsByClassName("franjaGris")
     
     NSString * js =
     @"fines = [];"
-    @"tds = document.getElementsByClassName(\"franjaGris\");"
+    @"tds = document.getElementById(\"resultados2\").getElementsByTagName(\"td\")[0].getElementsByClassName(\"franjaBlanco\");"
     @"for (var i = 0; i < tds.length; i++) { "
     @"  fines.push(tds[i].innerText);"
     @"}"
     @"fines.toString();";
     
-    NSString * result = [self.webView stringByEvaluatingJavaScriptFromString:js];
-    NSArray * array = [result componentsSeparatedByString:@","];
+    NSString * js2 =
+    @"fines2 = [];"
+    @"tds2 = document.getElementById(\"resultados2\").getElementsByTagName(\"td\")[0].getElementsByClassName(\"franjaGris\");"
+    @"for (var i = 0; i < tds2.length; i++) { "
+    @"  fines2.push(tds2[i].innerText);"
+    @"}"
+    @"fines2.toString();";
     
-    return @[[[Fine alloc] initWithArray:array]];
+    NSString * result = [self.webView stringByEvaluatingJavaScriptFromString:js];
+    NSString * result2 = [self.webView stringByEvaluatingJavaScriptFromString:js2];
+    
+    NSArray * array = [result componentsSeparatedByString:@","];
+    NSArray * array2 = [result2 componentsSeparatedByString:@","];
+    
+    NSMutableArray * fines = [NSMutableArray array];
+    NSMutableArray * tempArray = [NSMutableArray array];
+    for (int i = 0; i < array.count; i++) {
+        
+        int j = i;
+        while (j < i + 6) {
+            
+            [tempArray addObject:array[j]];
+            j++;
+        }
+        [fines addObject:[[Fine alloc] initWithArray:tempArray]];
+        [tempArray removeAllObjects];
+        
+        j = i;
+        while (j < i + 6) {
+            
+            [tempArray addObject:array2[j]];
+            j++;
+        }
+        [fines addObject:[[Fine alloc] initWithArray:tempArray]];
+        [tempArray removeAllObjects];
+        
+        i = j;
+    }
+    
+    
+    return fines.copy;
 }
 
 #pragma mark - WebView
