@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26595A9D18E3219500EF6AEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595A9C18E3219500EF6AEC /* Foundation.framework */; };
+		26595A9F18E3219500EF6AEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595A9E18E3219500EF6AEC /* CoreGraphics.framework */; };
+		26595AA118E3219500EF6AEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595AA018E3219500EF6AEC /* UIKit.framework */; };
+		26595AA718E3219500EF6AEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26595AA518E3219500EF6AEC /* InfoPlist.strings */; };
+		26595AA918E3219500EF6AEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AA818E3219500EF6AEC /* main.m */; };
+		26595AAD18E3219500EF6AEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AAC18E3219500EF6AEC /* AppDelegate.m */; };
+		26595AAF18E3219500EF6AEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26595AAE18E3219500EF6AEC /* Images.xcassets */; };
+		26595AB618E3219500EF6AEC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595AB518E3219500EF6AEC /* XCTest.framework */; };
+		26595AB718E3219500EF6AEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595A9C18E3219500EF6AEC /* Foundation.framework */; };
+		26595AB818E3219500EF6AEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595AA018E3219500EF6AEC /* UIKit.framework */; };
+		26595AC018E3219500EF6AEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26595ABE18E3219500EF6AEC /* InfoPlist.strings */; };
+		26595AC218E3219500EF6AEC /* Consulta_MultaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AC118E3219500EF6AEC /* Consulta_MultaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26595AB918E3219500EF6AEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26595A9118E3219500EF6AEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26595A9818E3219500EF6AEC;
+			remoteInfo = "Consulta Multa";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		26595A9918E3219500EF6AEC /* Consulta Multa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Consulta Multa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26595A9C18E3219500EF6AEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		26595A9E18E3219500EF6AEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		26595AA018E3219500EF6AEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		26595AA418E3219500EF6AEC /* Consulta Multa-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Consulta Multa-Info.plist"; sourceTree = "<group>"; };
+		26595AA618E3219500EF6AEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26595AA818E3219500EF6AEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		26595AAA18E3219500EF6AEC /* Consulta Multa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Consulta Multa-Prefix.pch"; sourceTree = "<group>"; };
+		26595AAB18E3219500EF6AEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		26595AAC18E3219500EF6AEC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		26595AAE18E3219500EF6AEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		26595AB418E3219500EF6AEC /* Consulta MultaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Consulta MultaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26595AB518E3219500EF6AEC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		26595ABD18E3219500EF6AEC /* Consulta MultaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Consulta MultaTests-Info.plist"; sourceTree = "<group>"; };
+		26595ABF18E3219500EF6AEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26595AC118E3219500EF6AEC /* Consulta_MultaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Consulta_MultaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26595A9618E3219500EF6AEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26595A9F18E3219500EF6AEC /* CoreGraphics.framework in Frameworks */,
+				26595AA118E3219500EF6AEC /* UIKit.framework in Frameworks */,
+				26595A9D18E3219500EF6AEC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26595AB118E3219500EF6AEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26595AB618E3219500EF6AEC /* XCTest.framework in Frameworks */,
+				26595AB818E3219500EF6AEC /* UIKit.framework in Frameworks */,
+				26595AB718E3219500EF6AEC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26595A9018E3219500EF6AEC = {
+			isa = PBXGroup;
+			children = (
+				26595AA218E3219500EF6AEC /* Consulta Multa */,
+				26595ABB18E3219500EF6AEC /* Consulta MultaTests */,
+				26595A9B18E3219500EF6AEC /* Frameworks */,
+				26595A9A18E3219500EF6AEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26595A9A18E3219500EF6AEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26595A9918E3219500EF6AEC /* Consulta Multa.app */,
+				26595AB418E3219500EF6AEC /* Consulta MultaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26595A9B18E3219500EF6AEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26595A9C18E3219500EF6AEC /* Foundation.framework */,
+				26595A9E18E3219500EF6AEC /* CoreGraphics.framework */,
+				26595AA018E3219500EF6AEC /* UIKit.framework */,
+				26595AB518E3219500EF6AEC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26595AA218E3219500EF6AEC /* Consulta Multa */ = {
+			isa = PBXGroup;
+			children = (
+				26595AAB18E3219500EF6AEC /* AppDelegate.h */,
+				26595AAC18E3219500EF6AEC /* AppDelegate.m */,
+				26595AAE18E3219500EF6AEC /* Images.xcassets */,
+				26595AA318E3219500EF6AEC /* Supporting Files */,
+			);
+			path = "Consulta Multa";
+			sourceTree = "<group>";
+		};
+		26595AA318E3219500EF6AEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26595AA418E3219500EF6AEC /* Consulta Multa-Info.plist */,
+				26595AA518E3219500EF6AEC /* InfoPlist.strings */,
+				26595AA818E3219500EF6AEC /* main.m */,
+				26595AAA18E3219500EF6AEC /* Consulta Multa-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26595ABB18E3219500EF6AEC /* Consulta MultaTests */ = {
+			isa = PBXGroup;
+			children = (
+				26595AC118E3219500EF6AEC /* Consulta_MultaTests.m */,
+				26595ABC18E3219500EF6AEC /* Supporting Files */,
+			);
+			path = "Consulta MultaTests";
+			sourceTree = "<group>";
+		};
+		26595ABC18E3219500EF6AEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26595ABD18E3219500EF6AEC /* Consulta MultaTests-Info.plist */,
+				26595ABE18E3219500EF6AEC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26595A9818E3219500EF6AEC /* Consulta Multa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26595AC518E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta Multa" */;
+			buildPhases = (
+				26595A9518E3219500EF6AEC /* Sources */,
+				26595A9618E3219500EF6AEC /* Frameworks */,
+				26595A9718E3219500EF6AEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Consulta Multa";
+			productName = "Consulta Multa";
+			productReference = 26595A9918E3219500EF6AEC /* Consulta Multa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26595AB318E3219500EF6AEC /* Consulta MultaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26595AC818E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta MultaTests" */;
+			buildPhases = (
+				26595AB018E3219500EF6AEC /* Sources */,
+				26595AB118E3219500EF6AEC /* Frameworks */,
+				26595AB218E3219500EF6AEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26595ABA18E3219500EF6AEC /* PBXTargetDependency */,
+			);
+			name = "Consulta MultaTests";
+			productName = "Consulta MultaTests";
+			productReference = 26595AB418E3219500EF6AEC /* Consulta MultaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26595A9118E3219500EF6AEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Salarion;
+				TargetAttributes = {
+					26595AB318E3219500EF6AEC = {
+						TestTargetID = 26595A9818E3219500EF6AEC;
+					};
+				};
+			};
+			buildConfigurationList = 26595A9418E3219500EF6AEC /* Build configuration list for PBXProject "Consulta Multa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 26595A9018E3219500EF6AEC;
+			productRefGroup = 26595A9A18E3219500EF6AEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26595A9818E3219500EF6AEC /* Consulta Multa */,
+				26595AB318E3219500EF6AEC /* Consulta MultaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26595A9718E3219500EF6AEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26595AA718E3219500EF6AEC /* InfoPlist.strings in Resources */,
+				26595AAF18E3219500EF6AEC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26595AB218E3219500EF6AEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26595AC018E3219500EF6AEC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26595A9518E3219500EF6AEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26595AAD18E3219500EF6AEC /* AppDelegate.m in Sources */,
+				26595AA918E3219500EF6AEC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26595AB018E3219500EF6AEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26595AC218E3219500EF6AEC /* Consulta_MultaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26595ABA18E3219500EF6AEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26595A9818E3219500EF6AEC /* Consulta Multa */;
+			targetProxy = 26595AB918E3219500EF6AEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26595AA518E3219500EF6AEC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26595AA618E3219500EF6AEC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		26595ABE18E3219500EF6AEC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26595ABF18E3219500EF6AEC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26595AC318E3219500EF6AEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		26595AC418E3219500EF6AEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26595AC618E3219500EF6AEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Consulta Multa/Consulta Multa-Prefix.pch";
+				INFOPLIST_FILE = "Consulta Multa/Consulta Multa-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		26595AC718E3219500EF6AEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Consulta Multa/Consulta Multa-Prefix.pch";
+				INFOPLIST_FILE = "Consulta Multa/Consulta Multa-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		26595AC918E3219500EF6AEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Consulta Multa.app/Consulta Multa";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Consulta Multa/Consulta Multa-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Consulta MultaTests/Consulta MultaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		26595ACA18E3219500EF6AEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Consulta Multa.app/Consulta Multa";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Consulta Multa/Consulta Multa-Prefix.pch";
+				INFOPLIST_FILE = "Consulta MultaTests/Consulta MultaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26595A9418E3219500EF6AEC /* Build configuration list for PBXProject "Consulta Multa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26595AC318E3219500EF6AEC /* Debug */,
+				26595AC418E3219500EF6AEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26595AC518E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta Multa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26595AC618E3219500EF6AEC /* Debug */,
+				26595AC718E3219500EF6AEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		26595AC818E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta MultaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26595AC918E3219500EF6AEC /* Debug */,
+				26595ACA18E3219500EF6AEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26595A9118E3219500EF6AEC /* Project object */;
+}
