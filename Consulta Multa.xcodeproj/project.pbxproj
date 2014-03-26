@@ -25,6 +25,9 @@
 		26595AD118E326A100EF6AEC /* ChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26595ACF18E326A100EF6AEC /* ChooseViewController.xib */; };
 		26595AD418E3283B00EF6AEC /* ConsultaNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AD318E3283B00EF6AEC /* ConsultaNavigationViewController.m */; };
 		26595AD818E32F7200EF6AEC /* UIViewController+Consulta.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AD718E32F7200EF6AEC /* UIViewController+Consulta.m */; };
+		26CC26A518E362C500A48A28 /* FinesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC26A318E362C500A48A28 /* FinesViewController.m */; };
+		26CC26A618E362C500A48A28 /* FinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CC26A418E362C500A48A28 /* FinesViewController.xib */; };
+		26CC26AA18E3653D00A48A28 /* Fine.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC26A918E3653D00A48A28 /* Fine.m */; };
 		C4639AADB89C45A9B42810D6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BED7A3AC5E4A9AB3FC1D01 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,11 @@
 		26595AD318E3283B00EF6AEC /* ConsultaNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsultaNavigationViewController.m; path = "Consulta Multa/Application/ConsultaNavigationViewController.m"; sourceTree = SOURCE_ROOT; };
 		26595AD618E32F7200EF6AEC /* UIViewController+Consulta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Consulta.h"; sourceTree = "<group>"; };
 		26595AD718E32F7200EF6AEC /* UIViewController+Consulta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Consulta.m"; sourceTree = "<group>"; };
+		26CC26A218E362C500A48A28 /* FinesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinesViewController.h; path = Fines/FinesViewController.h; sourceTree = "<group>"; };
+		26CC26A318E362C500A48A28 /* FinesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinesViewController.m; path = Fines/FinesViewController.m; sourceTree = "<group>"; };
+		26CC26A418E362C500A48A28 /* FinesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinesViewController.xib; path = Fines/FinesViewController.xib; sourceTree = "<group>"; };
+		26CC26A818E3653D00A48A28 /* Fine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fine.h; path = Models/Fine.h; sourceTree = "<group>"; };
+		26CC26A918E3653D00A48A28 /* Fine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fine.m; path = Models/Fine.m; sourceTree = "<group>"; };
 		4648AE00B6194861BFA2D17A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		62BED7A3AC5E4A9AB3FC1D01 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -185,6 +193,8 @@
 				26595AD318E3283B00EF6AEC /* ConsultaNavigationViewController.m */,
 				26595ACC18E3267C00EF6AEC /* Choose Criteria */,
 				26064E5418E35C27007E99C0 /* Address */,
+				26CC26A718E362C900A48A28 /* Fines */,
+				26CC26AB18E3654800A48A28 /* Models */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -207,6 +217,25 @@
 				26595AD718E32F7200EF6AEC /* UIViewController+Consulta.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		26CC26A718E362C900A48A28 /* Fines */ = {
+			isa = PBXGroup;
+			children = (
+				26CC26A218E362C500A48A28 /* FinesViewController.h */,
+				26CC26A318E362C500A48A28 /* FinesViewController.m */,
+				26CC26A418E362C500A48A28 /* FinesViewController.xib */,
+			);
+			name = Fines;
+			sourceTree = "<group>";
+		};
+		26CC26AB18E3654800A48A28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				26CC26A818E3653D00A48A28 /* Fine.h */,
+				26CC26A918E3653D00A48A28 /* Fine.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26595AA718E3219500EF6AEC /* InfoPlist.strings in Resources */,
+				26CC26A618E362C500A48A28 /* FinesViewController.xib in Resources */,
 				26064E5318E35C1F007E99C0 /* SelectAddressViewController.xib in Resources */,
 				26595AD118E326A100EF6AEC /* ChooseViewController.xib in Resources */,
 				26595AAF18E3219500EF6AEC /* Images.xcassets in Resources */,
@@ -344,9 +374,11 @@
 				26595AD018E326A100EF6AEC /* ChooseViewController.m in Sources */,
 				26595AD418E3283B00EF6AEC /* ConsultaNavigationViewController.m in Sources */,
 				26595AD818E32F7200EF6AEC /* UIViewController+Consulta.m in Sources */,
+				26CC26AA18E3653D00A48A28 /* Fine.m in Sources */,
 				26595AAD18E3219500EF6AEC /* AppDelegate.m in Sources */,
 				26595AA918E3219500EF6AEC /* main.m in Sources */,
 				26064E5218E35C1F007E99C0 /* SelectAddressViewController.m in Sources */,
+				26CC26A518E362C500A48A28 /* FinesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

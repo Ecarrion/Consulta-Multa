@@ -7,6 +7,7 @@
 //
 
 #import "SelectAddressViewController.h"
+#import "FinesViewController.h"
 
 @interface SelectAddressViewController ()
 
@@ -44,7 +45,9 @@
         [SVProgressHUD dismiss];
         
         if (!error) {
-            puts("finished with no error");
+            
+            FinesViewController * fvc = [[FinesViewController alloc] init];
+            [self.navigationController pushViewController:fvc animated:YES];
         }
         
     }];

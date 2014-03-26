@@ -20,5 +20,6 @@ typedef void(^webCompletionBlock)(NSError * error);
 
 
 -(NSArray *)getAddresses;
+-(NSArray *)getFines;
 
 @end

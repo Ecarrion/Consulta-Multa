@@ -7,6 +7,7 @@
 //
 
 #import "ConsultaNavigationViewController.h"
+#import "Fine.h"
 
 #define FOTOMULTAS_BASE_URL @"http://www.medellin.gov.co/qxi_tramites/consultas/consultarComparendoElectronico.jsp"
 
@@ -136,6 +137,24 @@
         return @[array1[0], array2[0], array1[1], array2[1], array1[2]];
     
     return nil;
+}
+
+-(NSArray *)getFines {
+    
+    //document.getElementsByClassName("franjaGris")
+    
+    NSString * js =
+    @"fines = [];"
+    @"tds = document.getElementsByClassName(\"franjaGris\");"
+    @"for (var i = 0; i < tds.length; i++) { "
+    @"  fines.push(tds[i].innerText);"
+    @"}"
+    @"fines.toString();";
+    
+    NSString * result = [self.webView stringByEvaluatingJavaScriptFromString:js];
+    NSArray * array = [result componentsSeparatedByString:@","];
+    
+    return @[[[Fine alloc] initWithArray:array]];
 }
 
 #pragma mark - WebView
