@@ -32,7 +32,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [plateTextField becomeFirstResponder];
     if ([plateTextField respondsToSelector:@selector(setTintColor:)]) {
         plateTextField.tintColor = GREEN_APP_COLOR;
     }
@@ -41,6 +40,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     
+    [plateTextField becomeFirstResponder];
     [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
     [self.consultaController reloadBaseUrlOnCompletion:^(NSError *error) {
         [SVProgressHUD dismiss];

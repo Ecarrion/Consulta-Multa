@@ -14,7 +14,6 @@
 		26595AA718E3219500EF6AEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26595AA518E3219500EF6AEC /* InfoPlist.strings */; };
 		26595AA918E3219500EF6AEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AA818E3219500EF6AEC /* main.m */; };
 		26595AAD18E3219500EF6AEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AAC18E3219500EF6AEC /* AppDelegate.m */; };
-		26595AAF18E3219500EF6AEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26595AAE18E3219500EF6AEC /* Images.xcassets */; };
 		26595AB618E3219500EF6AEC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595AB518E3219500EF6AEC /* XCTest.framework */; };
 		26595AB718E3219500EF6AEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595A9C18E3219500EF6AEC /* Foundation.framework */; };
 		26595AB818E3219500EF6AEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595AA018E3219500EF6AEC /* UIKit.framework */; };
@@ -25,6 +24,7 @@
 		26595AD418E3283B00EF6AEC /* ConsultaNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AD318E3283B00EF6AEC /* ConsultaNavigationViewController.m */; };
 		26595AD818E32F7200EF6AEC /* UIViewController+Consulta.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AD718E32F7200EF6AEC /* UIViewController+Consulta.m */; };
 		26A87E3018E3CE38002FC267 /* SelectAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26064E5118E35C1F007E99C0 /* SelectAddressViewController.xib */; };
+		26A87E3218E3DD42002FC267 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A87E3118E3DD42002FC267 /* Images.xcassets */; };
 		26CC26A518E362C500A48A28 /* FinesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC26A318E362C500A48A28 /* FinesViewController.m */; };
 		26CC26A618E362C500A48A28 /* FinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CC26A418E362C500A48A28 /* FinesViewController.xib */; };
 		26CC26AA18E3653D00A48A28 /* Fine.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC26A918E3653D00A48A28 /* Fine.m */; };
@@ -55,7 +55,6 @@
 		26595AAA18E3219500EF6AEC /* Consulta Multa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Consulta Multa-Prefix.pch"; sourceTree = "<group>"; };
 		26595AAB18E3219500EF6AEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26595AAC18E3219500EF6AEC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		26595AAE18E3219500EF6AEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26595AB418E3219500EF6AEC /* Consulta MultaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Consulta MultaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26595AB518E3219500EF6AEC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		26595ABD18E3219500EF6AEC /* Consulta MultaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Consulta MultaTests-Info.plist"; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		26595AD318E3283B00EF6AEC /* ConsultaNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsultaNavigationViewController.m; path = "Consulta Multa/Application/ConsultaNavigationViewController.m"; sourceTree = SOURCE_ROOT; };
 		26595AD618E32F7200EF6AEC /* UIViewController+Consulta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Consulta.h"; sourceTree = "<group>"; };
 		26595AD718E32F7200EF6AEC /* UIViewController+Consulta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Consulta.m"; sourceTree = "<group>"; };
+		26A87E3118E3DD42002FC267 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26CC26A218E362C500A48A28 /* FinesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinesViewController.h; path = Fines/FinesViewController.h; sourceTree = "<group>"; };
 		26CC26A318E362C500A48A28 /* FinesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinesViewController.m; path = Fines/FinesViewController.m; sourceTree = "<group>"; };
 		26CC26A418E362C500A48A28 /* FinesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinesViewController.xib; path = Fines/FinesViewController.xib; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				26595AAB18E3219500EF6AEC /* AppDelegate.h */,
 				26595AAC18E3219500EF6AEC /* AppDelegate.m */,
 				26595ACB18E3267C00EF6AEC /* Application */,
-				26595AAE18E3219500EF6AEC /* Images.xcassets */,
+				26A87E3118E3DD42002FC267 /* Images.xcassets */,
 				26595AA318E3219500EF6AEC /* Supporting Files */,
 			);
 			path = "Consulta Multa";
@@ -318,8 +318,8 @@
 				26595AA718E3219500EF6AEC /* InfoPlist.strings in Resources */,
 				26CC26A618E362C500A48A28 /* FinesViewController.xib in Resources */,
 				26595AD118E326A100EF6AEC /* ChooseViewController.xib in Resources */,
+				26A87E3218E3DD42002FC267 /* Images.xcassets in Resources */,
 				26A87E3018E3CE38002FC267 /* SelectAddressViewController.xib in Resources */,
-				26595AAF18E3219500EF6AEC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

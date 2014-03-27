@@ -22,7 +22,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Elige tu dirección";
     }
     return self;
 }
@@ -31,15 +30,27 @@
 {
     [super viewDidLoad];
     
-    self.addresses = [self.consultaController getAddresses];
-    if (!self.addresses) {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Enhorabuena!" message:@"No tienes fotomultas" delegate:nil cancelButtonTitle:@"Continuar" otherButtonTitles:nil, nil];
-        [alert show];
-    }
-    
     addressTableView.tableFooterView = [[UIView alloc] init];
     continueButton.layer.cornerRadius = 10;
     continueButton.enabled = NO;
+    
+    
+    self.addresses = [self.consultaController getAddresses];
+    if (!self.addresses) {
+        
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"No tienes fotomultas" message:@"¡Felicitaciones!" delegate:nil cancelButtonTitle:@"Continuar" otherButtonTitles:nil, nil];
+        [alert show];
+        
+        continueButton.hidden = YES;
+        
+        self.title = @"¡Felicitaciones!";
+        noFinesView.hidden = NO;
+        
+    } else {
+        
+        self.title = @"Elige tu dirección";
+    }
+
 }
 
 - (IBAction)goPressed:(id)sender {

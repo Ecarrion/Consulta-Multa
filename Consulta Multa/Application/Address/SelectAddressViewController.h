@@ -12,6 +12,7 @@
     
     __weak IBOutlet UITableView *addressTableView;
     __weak IBOutlet UIButton *continueButton;
+    __weak IBOutlet UIImageView *noFinesView;
     
 }
 
