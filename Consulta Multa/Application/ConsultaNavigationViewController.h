@@ -10,7 +10,10 @@
 
 typedef void(^webCompletionBlock)(NSError * error);
 
-@interface ConsultaNavigationViewController : UINavigationController
+@interface ConsultaNavigationViewController : UINavigationController {
+    
+    
+}
 
 -(void)reloadBaseUrlOnCompletion:(webCompletionBlock)block;
 -(void)selectSearchCriteria:(NSInteger)number onCompletion:(webCompletionBlock)block;

@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) UIWebView * webView;
 @property (nonatomic, strong) UIButton * closeButton;
+@property (nonatomic, strong) UIView * holderView;
+
 @property (nonatomic, copy) webCompletionBlock completionlBlock;
 
 @end
@@ -48,31 +50,44 @@
 {
     [super viewDidLoad];
     
-    self.webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+    CGRect frame = self.view.bounds;
+    frame.origin.x = 10;
+    frame.origin.y = 20;
+    frame.size.width -= 20;
+    frame.size.height -= 30;
+    self.holderView = [[UIView alloc] initWithFrame:frame];
+    self.holderView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    self.holderView.alpha = 0;
+    self.holderView.layer.cornerRadius = 10;
+    self.holderView.clipsToBounds = YES;
+    
+    self.webView = [[UIWebView alloc] initWithFrame:self.holderView.bounds];
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.webView.delegate = self;
-    self.webView.alpha = 0.0;
     self.webView.scalesPageToFit = YES;
-    [self.view addSubview:self.webView];
+    self.webView.layer.cornerRadius = 10;
+    self.webView.clipsToBounds = YES;
     
-    self.closeButton = [[UIButton alloc] initWithFrame:CGRectMake(30, 100, 30, 30)];
-    [self.closeButton setTitle:@"X" forState:UIControlStateNormal];
+    self.closeButton = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - 65, 5, 60, 30)];
+    self.closeButton.backgroundColor = GREEN_APP_COLOR;
+    self.closeButton.layer.cornerRadius = 7;
+    [self.closeButton setTitle:@"Cerrar" forState:UIControlStateNormal];
     [self.closeButton addTarget:self action:@selector(hideWebView) forControlEvents:UIControlEventTouchUpInside];
-    self.closeButton.alpha = 0.0;
-    [self.view addSubview:self.closeButton];
     
+    
+    [self.holderView addSubview:self.webView];
+    [self.holderView addSubview:self.closeButton];
+    [self.view addSubview:self.holderView];
 }
 
 -(void)showWebView {
     
-    self.webView.alpha = 1.0;
-    self.closeButton.alpha = 1.0;
+    self.holderView.alpha = 1.0;
 }
-
+    
 -(void)hideWebView {
     
-    self.webView.alpha = 0.0;
-    self.closeButton.alpha = 0.0;
+    self.holderView.alpha = 0.0;
     [self.webView goBack];
 }
 
