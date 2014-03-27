@@ -7,8 +7,9 @@
 //
 
 #import "FinesViewController.h" 
+#import "Fine.h"
 
-@interface FinesViewController ()
+@interface FinesViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray * fines;
 
@@ -30,6 +31,25 @@
     [super viewDidLoad];
     
     self.fines = [self.consultaController getFines];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.fines.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FineCell"];
+    
+    Fine * fine = self.fines[indexPath.row];
+    cell.textLabel.text = fine.description;
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 #pragma mark - Memory

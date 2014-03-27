@@ -49,7 +49,6 @@
             FinesViewController * fvc = [[FinesViewController alloc] init];
             [self.navigationController pushViewController:fvc animated:YES];
         }
-        
     }];
 }
 

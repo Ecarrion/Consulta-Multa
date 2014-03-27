@@ -10,4 +10,7 @@
 
 @interface FinesViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UITableView *finesTableView;
+
 @end
