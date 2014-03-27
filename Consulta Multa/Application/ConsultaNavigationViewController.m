@@ -68,6 +68,7 @@
     self.webView.layer.cornerRadius = 10;
     self.webView.clipsToBounds = YES;
     
+    
     self.closeButton = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - 65, 5, 60, 30)];
     self.closeButton.backgroundColor = GREEN_APP_COLOR;
     self.closeButton.layer.cornerRadius = 7;
@@ -82,13 +83,39 @@
 
 -(void)showWebView {
     
+    CGAffineTransform identity = CGAffineTransformIdentity;
+    CGAffineTransform viewTransform = CGAffineTransformScale(identity, 0.1, 0.1);
+    self.holderView.transform = viewTransform;
     self.holderView.alpha = 1.0;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        self.holderView.transform = identity;
+        
+    } completion:^(BOOL finished) {
+        
+        
+    }];
+    
+    
 }
     
 -(void)hideWebView {
     
-    self.holderView.alpha = 0.0;
-    [self.webView goBack];
+    CGAffineTransform identity = CGAffineTransformIdentity;
+    CGAffineTransform viewTransform = CGAffineTransformScale(identity, 0.1, 0.1);
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        self.holderView.transform = viewTransform;
+        
+    } completion:^(BOOL finished) {
+        
+        self.holderView.alpha = 0.0;
+        self.holderView.transform = identity;
+        [self.webView goBack];
+        
+    }];
 }
 
 #pragma mark - Foto multa methods
