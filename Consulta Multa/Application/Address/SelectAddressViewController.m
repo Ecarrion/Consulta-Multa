@@ -47,7 +47,8 @@
         if (!error) {
             
             FinesViewController * fvc = [[FinesViewController alloc] init];
-            [self.navigationController pushViewController:fvc animated:YES];
+            UIViewController * first = self.navigationController.viewControllers.firstObject;
+            [self.navigationController setViewControllers:@[first, fvc] animated:YES];
         }
     }];
 }

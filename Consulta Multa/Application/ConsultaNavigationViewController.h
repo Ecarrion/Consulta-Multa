@@ -18,6 +18,9 @@ typedef void(^webCompletionBlock)(NSError * error);
 -(void)selectAddress:(NSInteger)addresIndex onCompletion:(webCompletionBlock)block;
 -(void)openPDFAtIndex:(NSInteger)index onCompletion:(webCompletionBlock)block;
 
+-(void)showWebView;
+-(void)hideWebView;
+
 
 -(NSArray *)getAddresses;
 -(NSArray *)getFines;

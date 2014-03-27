@@ -14,6 +14,7 @@
 @interface ConsultaNavigationViewController () <UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView * webView;
+@property (nonatomic, strong) UIButton * closeButton;
 @property (nonatomic, copy) webCompletionBlock completionlBlock;
 
 @end
@@ -38,12 +39,31 @@
     self.webView = [[UIWebView alloc] initWithFrame:self.view.frame];
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.webView.delegate = self;
-    self.webView.userInteractionEnabled = NO;
-    self.webView.alpha = 0.2;
+    self.webView.alpha = 0.0;
     self.webView.scalesPageToFit = YES;
     [self.view addSubview:self.webView];
     
+    self.closeButton = [[UIButton alloc] initWithFrame:CGRectMake(30, 100, 30, 30)];
+    [self.closeButton setTitle:@"X" forState:UIControlStateNormal];
+    [self.closeButton addTarget:self action:@selector(hideWebView) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.closeButton];
+    
 }
+
+-(void)showWebView {
+    
+    self.webView.alpha = 1.0;
+    self.closeButton.alpha = 1.0;
+}
+
+-(void)hideWebView {
+    
+    self.webView.alpha = 0.0;
+    self.closeButton.alpha = 0.0;
+    [self.webView goBack];
+}
+
+#pragma mark - Foto multa methods
 
 -(void)reloadBaseUrlOnCompletion:(webCompletionBlock)block {
     
@@ -52,8 +72,6 @@
     NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:FOTOMULTAS_BASE_URL]];
     [self.webView loadRequest:request];
 }
-
-#pragma mark - Foto multa methods
 
 -(void)selectSearchCriteria:(NSInteger)number  onCompletion:(webCompletionBlock)block {
     

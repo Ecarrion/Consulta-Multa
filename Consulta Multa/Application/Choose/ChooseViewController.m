@@ -20,7 +20,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        self.title = @"Selecciona";
+        self.navigationItem.title = @"";
+        self.title = @"Ingresa tu placa";
     }
     return self;
 }

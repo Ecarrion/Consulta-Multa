@@ -50,6 +50,25 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+    [self.consultaController openPDFAtIndex:indexPath.row onCompletion:^(NSError *error) {
+        
+        if (!error) {
+            
+            //Little hack for giving time to the pdf to render
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [SVProgressHUD dismiss];
+                [self.consultaController showWebView];
+            });
+            
+        } else {
+            
+            [SVProgressHUD dismiss];
+        }
+        
+        
+    }];
 }
 
 #pragma mark - Memory
