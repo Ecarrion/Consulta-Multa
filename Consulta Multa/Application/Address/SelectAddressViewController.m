@@ -9,7 +9,7 @@
 #import "SelectAddressViewController.h"
 #import "FinesViewController.h"
 
-@interface SelectAddressViewController ()
+@interface SelectAddressViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray * addresses;
 
@@ -30,11 +30,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.addresses = [self.consultaController getAddresses];
     if (!self.addresses) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Enhorabuena!" message:@"No tienes fotomultas" delegate:nil cancelButtonTitle:@"Continuar" otherButtonTitles:nil, nil];
         [alert show];
     }
+    
+    addressTableView.tableFooterView = [[UIView alloc] init];
+    continueButton.layer.cornerRadius = 10;
+    continueButton.enabled = NO;
 }
 
 - (IBAction)goPressed:(id)sender {
@@ -68,6 +73,9 @@
     if (!cell) {
         
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+        cell.textLabel.textColor = GREEN_APP_COLOR;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     cell.textLabel.text = self.addresses[indexPath.row];
@@ -75,8 +83,19 @@
     return cell;
 }
 
+-(NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+
+    return indexPath;
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    continueButton.enabled = YES;
 }
 
 #pragma mark - Memory

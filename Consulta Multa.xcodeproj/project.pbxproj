@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		26064E5218E35C1F007E99C0 /* SelectAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26064E5018E35C1F007E99C0 /* SelectAddressViewController.m */; };
-		26064E5318E35C1F007E99C0 /* SelectAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26064E5118E35C1F007E99C0 /* SelectAddressViewController.xib */; };
 		26595A9D18E3219500EF6AEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595A9C18E3219500EF6AEC /* Foundation.framework */; };
 		26595A9F18E3219500EF6AEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595A9E18E3219500EF6AEC /* CoreGraphics.framework */; };
 		26595AA118E3219500EF6AEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26595AA018E3219500EF6AEC /* UIKit.framework */; };
@@ -25,6 +24,7 @@
 		26595AD118E326A100EF6AEC /* ChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26595ACF18E326A100EF6AEC /* ChooseViewController.xib */; };
 		26595AD418E3283B00EF6AEC /* ConsultaNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AD318E3283B00EF6AEC /* ConsultaNavigationViewController.m */; };
 		26595AD818E32F7200EF6AEC /* UIViewController+Consulta.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AD718E32F7200EF6AEC /* UIViewController+Consulta.m */; };
+		26A87E3018E3CE38002FC267 /* SelectAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26064E5118E35C1F007E99C0 /* SelectAddressViewController.xib */; };
 		26CC26A518E362C500A48A28 /* FinesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC26A318E362C500A48A28 /* FinesViewController.m */; };
 		26CC26A618E362C500A48A28 /* FinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CC26A418E362C500A48A28 /* FinesViewController.xib */; };
 		26CC26AA18E3653D00A48A28 /* Fine.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC26A918E3653D00A48A28 /* Fine.m */; };
@@ -317,8 +317,8 @@
 			files = (
 				26595AA718E3219500EF6AEC /* InfoPlist.strings in Resources */,
 				26CC26A618E362C500A48A28 /* FinesViewController.xib in Resources */,
-				26064E5318E35C1F007E99C0 /* SelectAddressViewController.xib in Resources */,
 				26595AD118E326A100EF6AEC /* ChooseViewController.xib in Resources */,
+				26A87E3018E3CE38002FC267 /* SelectAddressViewController.xib in Resources */,
 				26595AAF18E3219500EF6AEC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

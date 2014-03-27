@@ -11,6 +11,7 @@
 @interface SelectAddressViewController : UIViewController {
     
     __weak IBOutlet UITableView *addressTableView;
+    __weak IBOutlet UIButton *continueButton;
     
 }
 
