@@ -25,6 +25,8 @@
 		26595AD818E32F7200EF6AEC /* UIViewController+Consulta.m in Sources */ = {isa = PBXBuildFile; fileRef = 26595AD718E32F7200EF6AEC /* UIViewController+Consulta.m */; };
 		26A87E3018E3CE38002FC267 /* SelectAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26064E5118E35C1F007E99C0 /* SelectAddressViewController.xib */; };
 		26A87E3218E3DD42002FC267 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A87E3118E3DD42002FC267 /* Images.xcassets */; };
+		26A965F918E44E48007137C4 /* FineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A965F718E44E48007137C4 /* FineCell.m */; };
+		26A965FA18E44E48007137C4 /* FineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A965F818E44E48007137C4 /* FineCell.xib */; };
 		26CC26A518E362C500A48A28 /* FinesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC26A318E362C500A48A28 /* FinesViewController.m */; };
 		26CC26A618E362C500A48A28 /* FinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CC26A418E362C500A48A28 /* FinesViewController.xib */; };
 		26CC26AA18E3653D00A48A28 /* Fine.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC26A918E3653D00A48A28 /* Fine.m */; };
@@ -68,6 +70,9 @@
 		26595AD618E32F7200EF6AEC /* UIViewController+Consulta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Consulta.h"; sourceTree = "<group>"; };
 		26595AD718E32F7200EF6AEC /* UIViewController+Consulta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Consulta.m"; sourceTree = "<group>"; };
 		26A87E3118E3DD42002FC267 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		26A965F618E44E48007137C4 /* FineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FineCell.h; path = Fines/FineCell.h; sourceTree = "<group>"; };
+		26A965F718E44E48007137C4 /* FineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FineCell.m; path = Fines/FineCell.m; sourceTree = "<group>"; };
+		26A965F818E44E48007137C4 /* FineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FineCell.xib; path = Fines/FineCell.xib; sourceTree = "<group>"; };
 		26CC26A218E362C500A48A28 /* FinesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinesViewController.h; path = Fines/FinesViewController.h; sourceTree = "<group>"; };
 		26CC26A318E362C500A48A28 /* FinesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinesViewController.m; path = Fines/FinesViewController.m; sourceTree = "<group>"; };
 		26CC26A418E362C500A48A28 /* FinesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinesViewController.xib; path = Fines/FinesViewController.xib; sourceTree = "<group>"; };
@@ -225,6 +230,9 @@
 				26CC26A218E362C500A48A28 /* FinesViewController.h */,
 				26CC26A318E362C500A48A28 /* FinesViewController.m */,
 				26CC26A418E362C500A48A28 /* FinesViewController.xib */,
+				26A965F618E44E48007137C4 /* FineCell.h */,
+				26A965F718E44E48007137C4 /* FineCell.m */,
+				26A965F818E44E48007137C4 /* FineCell.xib */,
 			);
 			name = Fines;
 			sourceTree = "<group>";
@@ -320,6 +328,7 @@
 				26595AD118E326A100EF6AEC /* ChooseViewController.xib in Resources */,
 				26A87E3218E3DD42002FC267 /* Images.xcassets in Resources */,
 				26A87E3018E3CE38002FC267 /* SelectAddressViewController.xib in Resources */,
+				26A965FA18E44E48007137C4 /* FineCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +386,7 @@
 				26CC26AA18E3653D00A48A28 /* Fine.m in Sources */,
 				26595AAD18E3219500EF6AEC /* AppDelegate.m in Sources */,
 				26595AA918E3219500EF6AEC /* main.m in Sources */,
+				26A965F918E44E48007137C4 /* FineCell.m in Sources */,
 				26064E5218E35C1F007E99C0 /* SelectAddressViewController.m in Sources */,
 				26CC26A518E362C500A48A28 /* FinesViewController.m in Sources */,
 			);

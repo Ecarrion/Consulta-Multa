@@ -8,8 +8,9 @@
 
 #import "FinesViewController.h" 
 #import "Fine.h"
+#import "FineCell.h"
 
-@interface FinesViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface FinesViewController () <UITableViewDataSource, UITableViewDelegate, FineCellDelegate>
 
 @property (nonatomic, strong) NSArray * fines;
 
@@ -32,11 +33,14 @@
 {
     [super viewDidLoad];
     
+    [self.finesTableView registerNib:[UINib nibWithNibName:@"FineCell" bundle:nil] forCellReuseIdentifier:@"FineCell"];
     self.fines = [self.consultaController getFines];
+    
     if (self.fines.count == 0) {
         
-        UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Lo siento, la dirección que seleccionaste no fue la correcta" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Lo siento, la dirección que seleccionaste no fue la correcta." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [a show];
+        
     }
 }
 
@@ -47,18 +51,23 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FineCell"];
-    
+    FineCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FineCell"];
     Fine * fine = self.fines[indexPath.row];
-    cell.textLabel.text = fine.description;
+    
+    cell.dateLabel.text = fine.dateString;
+    cell.addressLabel.text = fine.address;
+    cell.descriptionLabel.text = fine.description;
+    [cell.descriptionLabel sizeToFit];
+    cell.delegate = self;
     
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)viewButtonPressedInCell:(FineCell *)fineCell {
     
+    NSInteger index = [self.finesTableView indexPathForCell:fineCell].row;
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
-    [self.consultaController openPDFAtIndex:indexPath.row onCompletion:^(NSError *error) {
+    [self.consultaController openPDFAtIndex:index onCompletion:^(NSError *error) {
         
         if (!error) {
             
