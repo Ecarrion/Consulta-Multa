@@ -22,6 +22,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        self.title = @"Multas";
     }
     return self;
 }
@@ -31,6 +33,11 @@
     [super viewDidLoad];
     
     self.fines = [self.consultaController getFines];
+    if (self.fines.count == 0) {
+        
+        UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Lo siento, la dirección que seleccionaste no fue la correcta" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [a show];
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -66,8 +73,6 @@
             
             [SVProgressHUD dismiss];
         }
-        
-        
     }];
 }
 

@@ -192,7 +192,7 @@
     
     NSMutableArray * fines = [NSMutableArray array];
     NSMutableArray * tempArray = [NSMutableArray array];
-    for (int i = 0; i < array.count; i++) {
+    for (int i = 0; i < array.count && array.count > 1; i++) {
         
         int j = i;
         while (j < i + 6) {
