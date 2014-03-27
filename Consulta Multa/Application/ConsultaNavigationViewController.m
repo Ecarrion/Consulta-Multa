@@ -111,7 +111,7 @@
     @"tds1 = document.querySelectorAll(\"td.franjaGris\");"
     @"for (var i = 0; i < tds1.length; i++) { "
     @"  if (tds1[i].innerText.length > 0) { "
-    @"      address1.push(tds1[i].innerText);"
+    @"      address1.push(tds1[i].innerText.replace(',' , ':'));"
     @"  }"
     @"}"
     @"address1.toString();";
@@ -122,7 +122,7 @@
     @"tds2 = tds2[0].getElementsByClassName(\"franjaBlanco\");"
     @"for (var i = 0; i < tds2.length; i++) { "
     @"  if (tds2[i].innerText.length > 0) { "
-    @"      address2.push(tds2[i].innerText);"
+    @"      address2.push(tds2[i].innerText.replace(',' , ':'));"
     @"  }"
     @"}"
     @"address2.toString();";
@@ -133,8 +133,16 @@
     NSArray * array1 = [result1 componentsSeparatedByString:@","];
     NSArray * array2 = [result2 componentsSeparatedByString:@","];
     
-    if (array1.count >= 3 && array2.count >= 2)
-        return @[array1[0], array2[0], array1[1], array2[1], array1[2]];
+    if (array1.count >= 3 && array2.count >= 2) {
+        
+        NSString * str1 = [array1[0] stringByReplacingOccurrencesOfString:@":" withString:@","];
+        NSString * str2 = [array2[0] stringByReplacingOccurrencesOfString:@":" withString:@","];
+        NSString * str3 = [array1[1] stringByReplacingOccurrencesOfString:@":" withString:@","];
+        NSString * str4 = [array2[1] stringByReplacingOccurrencesOfString:@":" withString:@","];
+        NSString * str5 = [array1[2] stringByReplacingOccurrencesOfString:@":" withString:@","];
+        
+        return @[str1, str2, str3, str4, str5];
+    }
     
     return nil;
 }
@@ -144,17 +152,17 @@
     
     NSString * js =
     @"fines = [];"
-    @"tds = document.getElementById(\"resultados2\").getElementsByTagName(\"td\")[0].getElementsByClassName(\"franjaBlanco\");"
+    @"tds = document.getElementById(\"resultados2\").getElementsByTagName(\"td\")[0].getElementsByClassName(\"franjaGris\");"
     @"for (var i = 0; i < tds.length; i++) { "
-    @"  fines.push(tds[i].innerText);"
+    @"  fines.push(tds[i].innerText.replace(',' , ':'));"
     @"}"
     @"fines.toString();";
     
     NSString * js2 =
     @"fines2 = [];"
-    @"tds2 = document.getElementById(\"resultados2\").getElementsByTagName(\"td\")[0].getElementsByClassName(\"franjaGris\");"
+    @"tds2 = document.getElementById(\"resultados2\").getElementsByTagName(\"td\")[0].getElementsByClassName(\"franjaBlanco\");"
     @"for (var i = 0; i < tds2.length; i++) { "
-    @"  fines2.push(tds2[i].innerText);"
+    @"  fines2.push(tds2[i].innerText.replace(',' , ':'));"
     @"}"
     @"fines2.toString();";
     
@@ -171,7 +179,8 @@
         int j = i;
         while (j < i + 6) {
             
-            [tempArray addObject:array[j]];
+            NSString * text = [array[j] stringByReplacingOccurrencesOfString:@":" withString:@","];
+            [tempArray addObject:text];
             j++;
         }
         [fines addObject:[[Fine alloc] initWithArray:tempArray]];
@@ -180,13 +189,14 @@
         j = i;
         while (j < i + 6) {
             
-            [tempArray addObject:array2[j]];
+            NSString * text = [array2[j] stringByReplacingOccurrencesOfString:@":" withString:@","];
+            [tempArray addObject:text];
             j++;
         }
         [fines addObject:[[Fine alloc] initWithArray:tempArray]];
         [tempArray removeAllObjects];
         
-        i = j;
+        i = j-1;
     }
     
     
