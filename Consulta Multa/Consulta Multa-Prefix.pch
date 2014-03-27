@@ -10,6 +10,8 @@
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif
 
+#define GREEN_APP_COLOR [UIColor colorWithRed:0 green:120.f/255.f blue:124.f/255.f alpha:1.f]
+
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>

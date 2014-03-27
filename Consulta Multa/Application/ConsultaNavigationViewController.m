@@ -28,6 +28,18 @@
         
         // Custom initialization
         self.navigationBar.translucent = NO;
+        if ([self.navigationBar respondsToSelector:@selector(setBarTintColor:)]) {
+            
+            [self.navigationBar setBarTintColor:GREEN_APP_COLOR];
+            [self.navigationBar setTintColor:[UIColor whiteColor]];
+            [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+            
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+            
+        } else {
+            
+            [self.navigationBar setTintColor:GREEN_APP_COLOR];
+        }
     }
     return self;
 }
@@ -46,6 +58,7 @@
     self.closeButton = [[UIButton alloc] initWithFrame:CGRectMake(30, 100, 30, 30)];
     [self.closeButton setTitle:@"X" forState:UIControlStateNormal];
     [self.closeButton addTarget:self action:@selector(hideWebView) forControlEvents:UIControlEventTouchUpInside];
+    self.closeButton.alpha = 0.0;
     [self.view addSubview:self.closeButton];
     
 }

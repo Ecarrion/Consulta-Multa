@@ -24,6 +24,7 @@
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Atras" style:UIBarButtonItemStylePlain target:nil action:nil];
     }
     return self;
+    
 }
 
 - (void)viewDidLoad
@@ -76,7 +77,11 @@
     return [textField resignFirstResponder];
 }
 
+#pragma mark - Status Bar
+
+
 #pragma mark - Memory
+
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
