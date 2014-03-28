@@ -34,14 +34,15 @@
     [super viewDidLoad];
     
     [self.finesTableView registerNib:[UINib nibWithNibName:@"FineCell" bundle:nil] forCellReuseIdentifier:@"FineCell"];
-    self.fines = [self.consultaController getFines];
+    self.finesTableView.tableFooterView = [[UIView alloc] init];
     
+    self.fines = [self.consultaController getFines];
     if (self.fines.count == 0) {
         
         UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Lo siento, la dirección que seleccionaste no fue la correcta." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [a show];
-        
     }
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -71,12 +72,8 @@
         
         if (!error) {
             
-            //Little hack for giving time to the pdf to render
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                
-                [SVProgressHUD dismiss];
-                [self.consultaController showWebView];
-            });
+            [SVProgressHUD dismiss];
+            [self.consultaController showWebView];
             
         } else {
             

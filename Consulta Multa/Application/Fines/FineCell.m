@@ -7,7 +7,7 @@
 //
 
 #import "FineCell.h"
-#define DESCRIPTION_FRAME CGRectMake(16, 38, 297, 61)
+#define DESCRIPTION_FRAME CGRectMake(16, 46, 297, 61)
 
 @implementation FineCell
 

@@ -133,7 +133,7 @@
     self.completionlBlock = block;
     
     NSString * line1 = @"select = document.getElementsByName(\"criterioBusqueda\")[0];";
-    NSString * line2 = [NSString stringWithFormat:@"select.options[%d].selected = true;", number];
+    NSString * line2 = [NSString stringWithFormat:@"select.options[%ld].selected = true;", (long)number];
     NSString * line3 = @"document.ConsultarComparendoElectronicoForm.submit();";
     NSString * js = [NSString stringWithFormat:@"%@ %@ %@", line1, line2, line3];
     
@@ -158,7 +158,7 @@
     self.completionlBlock = block;
     
     NSString * line1 = @"radios = document.getElementsByName(\"direccionSeleccionada\");";
-    NSString * line2 = [NSString stringWithFormat:@"radios[%d].checked = true;", addresIndex];
+    NSString * line2 = [NSString stringWithFormat:@"radios[%ld].checked = true;", (long)addresIndex];
     NSString * line3 = @"consultarBut = document.getElementsByClassName(\"button\")[0];";
     NSString * line4 =  @"consultarBut.click();";
     NSString * js = [NSString stringWithFormat:@"%@ %@ %@ %@", line1, line2, line3, line4];
@@ -170,7 +170,7 @@
     
     self.completionlBlock = block;
     
-    NSString * line1 = [NSString stringWithFormat:@"pdfLink = document.getElementById(\"resultados2\").getElementsByTagName(\"a\")[%d];", index];
+    NSString * line1 = [NSString stringWithFormat:@"pdfLink = document.getElementById(\"resultados2\").getElementsByTagName(\"a\")[%ld];", (long)index];
     NSString * line2 = @"pdfLink.click();";
     NSString * js = [NSString stringWithFormat:@"%@ %@", line1, line2];
     
@@ -251,22 +251,30 @@
         
         int j = i;
         while (j < i + 6) {
-            
-            NSString * text = [array[j] stringByReplacingOccurrencesOfString:@":" withString:@","];
-            [tempArray addObject:text];
+            if (array.count >= i + 6) {
+                NSString * text = [array[j] stringByReplacingOccurrencesOfString:@":" withString:@","];
+                [tempArray addObject:text];
+            }
             j++;
         }
-        [fines addObject:[[Fine alloc] initWithArray:tempArray]];
+        
+        if (tempArray.count == 6) {
+            [fines addObject:[[Fine alloc] initWithArray:tempArray]];
+        }
         [tempArray removeAllObjects];
         
         j = i;
         while (j < i + 6) {
-            
-            NSString * text = [array2[j] stringByReplacingOccurrencesOfString:@":" withString:@","];
-            [tempArray addObject:text];
+            if (array2.count >= i + 6) {
+                NSString * text = [array2[j] stringByReplacingOccurrencesOfString:@":" withString:@","];
+                [tempArray addObject:text];
+            }
             j++;
         }
-        [fines addObject:[[Fine alloc] initWithArray:tempArray]];
+        
+        if (tempArray.count == 6) {
+            [fines addObject:[[Fine alloc] initWithArray:tempArray]];
+        }
         [tempArray removeAllObjects];
         
         i = j-1;
@@ -291,11 +299,18 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
     puts("finish");
-    if (self.completionlBlock) {
-        webCompletionBlock block = [self.completionlBlock copy];
-        self.completionlBlock = nil;
-        block(nil);
-        block = nil;
+    
+    //Ad hoc solution for knowing if a PDF is going to be load
+    NSString * string = self.webView.request.URL.absoluteString;
+    if ([string rangeOfString:@"visualizarPdf.jsp"].location == NSNotFound) {
+        
+        if (self.completionlBlock) {
+            webCompletionBlock block = [self.completionlBlock copy];
+            self.completionlBlock = nil;
+            block(nil);
+            block = nil;
+        }
+        
     }
 }
 
