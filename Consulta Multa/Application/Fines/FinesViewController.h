@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FinesViewController : UIViewController
+@interface FinesViewController : UIViewController {
+    
+    
+    __weak IBOutlet UILabel *infoLabel;
+    __weak IBOutlet UIImageView *imageView;
+    
+}
 
 
 @property (weak, nonatomic) IBOutlet UITableView *finesTableView;

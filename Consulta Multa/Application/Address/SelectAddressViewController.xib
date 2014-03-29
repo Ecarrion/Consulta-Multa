@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="addressTableView" destination="RLD-sE-1le" id="m55-mF-XWh"/>
                 <outlet property="continueButton" destination="ToY-zt-9Eg" id="qUb-gr-LXR"/>
+                <outlet property="infoLabel" destination="Gqw-g4-DNm" id="Xhh-Ui-b1q"/>
                 <outlet property="noFinesView" destination="DnN-jk-xd9" id="9eZ-Dt-rC6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -44,10 +45,17 @@
                         <action selector="goPressed:" destination="-1" eventType="touchUpInside" id="U2t-KO-eVX"/>
                     </connections>
                 </button>
-                <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="success-2" id="DnN-jk-xd9">
-                    <rect key="frame" x="-27" y="79" width="347" height="425"/>
+                <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="success" id="DnN-jk-xd9">
+                    <rect key="frame" x="-27" y="115" width="347" height="389"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                 </imageView>
+                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡No tienes fotomultas!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" id="Gqw-g4-DNm">
+                    <rect key="frame" x="0.0" y="27" width="320" height="81"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                    <color key="textColor" red="0.0" green="0.47058823529999999" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -56,6 +64,6 @@
         </view>
     </objects>
     <resources>
-        <image name="success-2" width="347" height="347"/>
+        <image name="success" width="347" height="347"/>
     </resources>
 </document>

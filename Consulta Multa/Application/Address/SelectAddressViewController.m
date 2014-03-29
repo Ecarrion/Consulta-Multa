@@ -34,17 +34,27 @@
     continueButton.layer.cornerRadius = 10;
     continueButton.enabled = NO;
     
-    
     self.addresses = [self.consultaController getAddresses];
-    if (!self.addresses) {
+    if (self.addresses.count == 0) {
         
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"No tienes fotomultas" message:@"¡Felicitaciones!" delegate:nil cancelButtonTitle:@"Continuar" otherButtonTitles:nil, nil];
-        [alert show];
+        if ([self.consultaController getToManyAttepmsError]) {
+            
+            self.title = @"Inténtalo más tarde";
+            infoLabel.text = @"Has fallado varias veces consultando esta placa.";
+            noFinesView.image = [UIImage imageNamed:@"error.png"];
+            noFinesView.contentMode = UIViewContentModeScaleToFill;
+            
+        } else {
+            
+            self.title = @"¡Felicitaciones!";
+            infoLabel.text = @"¡No tienes fotomultas!";
+            noFinesView.image = [UIImage imageNamed:@"success.png"];
+            noFinesView.contentMode = UIViewContentModeScaleAspectFill;
+        }
         
-        continueButton.hidden = YES;
-        
-        self.title = @"¡Felicitaciones!";
         noFinesView.hidden = NO;
+        infoLabel.hidden = NO;
+        continueButton.hidden = YES;
         
     } else {
         

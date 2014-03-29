@@ -57,7 +57,7 @@
     frame.size.height -= 30;
     self.holderView = [[UIView alloc] initWithFrame:frame];
     self.holderView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    self.holderView.alpha = 0;
+    self.holderView.alpha = 0.0;
     self.holderView.layer.cornerRadius = 10;
     self.holderView.clipsToBounds = YES;
     
@@ -283,6 +283,18 @@
     
     return fines.copy;
 }
+
+-(BOOL)getToManyAttepmsError {
+    
+    NSString * result = [self.webView stringByEvaluatingJavaScriptFromString:@"document.querySelectorAll(\"span.alerta\")[0].innerText"];
+    if ([result rangeOfString:@"La consulta se ha bloqueado"].location != NSNotFound) {
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
 
 #pragma mark - WebView
 

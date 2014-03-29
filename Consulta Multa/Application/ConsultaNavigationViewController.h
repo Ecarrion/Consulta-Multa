@@ -20,6 +20,7 @@ typedef void(^webCompletionBlock)(NSError * error);
 -(void)setPlate:(NSString *)plate onCompletion:(webCompletionBlock)block;
 -(void)selectAddress:(NSInteger)addresIndex onCompletion:(webCompletionBlock)block;
 -(void)openPDFAtIndex:(NSInteger)index onCompletion:(webCompletionBlock)block;
+-(BOOL)getToManyAttepmsError;
 
 -(void)showWebView;
 -(void)hideWebView;
