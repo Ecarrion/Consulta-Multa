@@ -47,19 +47,19 @@
 		26064E4F18E35C1F007E99C0 /* SelectAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectAddressViewController.h; path = Address/SelectAddressViewController.h; sourceTree = "<group>"; };
 		26064E5018E35C1F007E99C0 /* SelectAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectAddressViewController.m; path = Address/SelectAddressViewController.m; sourceTree = "<group>"; };
 		26064E5118E35C1F007E99C0 /* SelectAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectAddressViewController.xib; path = Address/SelectAddressViewController.xib; sourceTree = "<group>"; };
-		26595A9918E3219500EF6AEC /* Consulta Multa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Consulta Multa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26595A9918E3219500EF6AEC /* Consulta Multa Medellin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Consulta Multa Medellin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26595A9C18E3219500EF6AEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26595A9E18E3219500EF6AEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		26595AA018E3219500EF6AEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		26595AA418E3219500EF6AEC /* Consulta Multa-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Consulta Multa-Info.plist"; sourceTree = "<group>"; };
+		26595AA418E3219500EF6AEC /* Consulta Multa Medellin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Consulta Multa Medellin-Info.plist"; sourceTree = "<group>"; };
 		26595AA618E3219500EF6AEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26595AA818E3219500EF6AEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		26595AAA18E3219500EF6AEC /* Consulta Multa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Consulta Multa-Prefix.pch"; sourceTree = "<group>"; };
+		26595AAA18E3219500EF6AEC /* Consulta Multa Medellin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Consulta Multa Medellin-Prefix.pch"; sourceTree = "<group>"; };
 		26595AAB18E3219500EF6AEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26595AAC18E3219500EF6AEC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		26595AB418E3219500EF6AEC /* Consulta MultaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Consulta MultaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26595AB418E3219500EF6AEC /* Consulta Multa MedellinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Consulta Multa MedellinTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26595AB518E3219500EF6AEC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		26595ABD18E3219500EF6AEC /* Consulta MultaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Consulta MultaTests-Info.plist"; sourceTree = "<group>"; };
+		26595ABD18E3219500EF6AEC /* Consulta Multa MedellinTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Consulta Multa MedellinTests-Info.plist"; sourceTree = "<group>"; };
 		26595ABF18E3219500EF6AEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26595AC118E3219500EF6AEC /* Consulta_MultaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Consulta_MultaTests.m; sourceTree = "<group>"; };
 		26595ACD18E326A100EF6AEC /* ChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseViewController.h; sourceTree = "<group>"; };
@@ -131,8 +131,8 @@
 		26595A9A18E3219500EF6AEC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				26595A9918E3219500EF6AEC /* Consulta Multa.app */,
-				26595AB418E3219500EF6AEC /* Consulta MultaTests.xctest */,
+				26595A9918E3219500EF6AEC /* Consulta Multa Medellin.app */,
+				26595AB418E3219500EF6AEC /* Consulta Multa MedellinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,10 +164,10 @@
 		26595AA318E3219500EF6AEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				26595AA418E3219500EF6AEC /* Consulta Multa-Info.plist */,
+				26595AA418E3219500EF6AEC /* Consulta Multa Medellin-Info.plist */,
 				26595AA518E3219500EF6AEC /* InfoPlist.strings */,
 				26595AA818E3219500EF6AEC /* main.m */,
-				26595AAA18E3219500EF6AEC /* Consulta Multa-Prefix.pch */,
+				26595AAA18E3219500EF6AEC /* Consulta Multa Medellin-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 		26595ABC18E3219500EF6AEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				26595ABD18E3219500EF6AEC /* Consulta MultaTests-Info.plist */,
+				26595ABD18E3219500EF6AEC /* Consulta Multa MedellinTests-Info.plist */,
 				26595ABE18E3219500EF6AEC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -249,9 +249,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		26595A9818E3219500EF6AEC /* Consulta Multa */ = {
+		26595A9818E3219500EF6AEC /* Consulta Multa Medellin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26595AC518E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta Multa" */;
+			buildConfigurationList = 26595AC518E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta Multa Medellin" */;
 			buildPhases = (
 				5D276D538B96439EA238FF1F /* Check Pods Manifest.lock */,
 				26595A9518E3219500EF6AEC /* Sources */,
@@ -263,14 +263,14 @@
 			);
 			dependencies = (
 			);
-			name = "Consulta Multa";
+			name = "Consulta Multa Medellin";
 			productName = "Consulta Multa";
-			productReference = 26595A9918E3219500EF6AEC /* Consulta Multa.app */;
+			productReference = 26595A9918E3219500EF6AEC /* Consulta Multa Medellin.app */;
 			productType = "com.apple.product-type.application";
 		};
-		26595AB318E3219500EF6AEC /* Consulta MultaTests */ = {
+		26595AB318E3219500EF6AEC /* Consulta Multa MedellinTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26595AC818E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta MultaTests" */;
+			buildConfigurationList = 26595AC818E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta Multa MedellinTests" */;
 			buildPhases = (
 				26595AB018E3219500EF6AEC /* Sources */,
 				26595AB118E3219500EF6AEC /* Frameworks */,
@@ -281,9 +281,9 @@
 			dependencies = (
 				26595ABA18E3219500EF6AEC /* PBXTargetDependency */,
 			);
-			name = "Consulta MultaTests";
+			name = "Consulta Multa MedellinTests";
 			productName = "Consulta MultaTests";
-			productReference = 26595AB418E3219500EF6AEC /* Consulta MultaTests.xctest */;
+			productReference = 26595AB418E3219500EF6AEC /* Consulta Multa MedellinTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -300,7 +300,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 26595A9418E3219500EF6AEC /* Build configuration list for PBXProject "Consulta Multa" */;
+			buildConfigurationList = 26595A9418E3219500EF6AEC /* Build configuration list for PBXProject "Consulta Multa Medellin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -312,8 +312,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				26595A9818E3219500EF6AEC /* Consulta Multa */,
-				26595AB318E3219500EF6AEC /* Consulta MultaTests */,
+				26595A9818E3219500EF6AEC /* Consulta Multa Medellin */,
+				26595AB318E3219500EF6AEC /* Consulta Multa MedellinTests */,
 			);
 		};
 /* End PBXProject section */
@@ -405,7 +405,7 @@
 /* Begin PBXTargetDependency section */
 		26595ABA18E3219500EF6AEC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 26595A9818E3219500EF6AEC /* Consulta Multa */;
+			target = 26595A9818E3219500EF6AEC /* Consulta Multa Medellin */;
 			targetProxy = 26595AB918E3219500EF6AEC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -507,10 +507,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Consulta Multa/Consulta Multa-Prefix.pch";
-				INFOPLIST_FILE = "Consulta Multa/Consulta Multa-Info.plist";
+				GCC_PREFIX_HEADER = "Consulta Multa/Consulta Multa Medellin-Prefix.pch";
+				INFOPLIST_FILE = "Consulta Multa/Consulta Multa Medellin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Consulta Multa Medellin";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -523,10 +523,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Mobile5 Media Limited";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Consulta Multa/Consulta Multa-Prefix.pch";
-				INFOPLIST_FILE = "Consulta Multa/Consulta Multa-Info.plist";
+				GCC_PREFIX_HEADER = "Consulta Multa/Consulta Multa Medellin-Prefix.pch";
+				INFOPLIST_FILE = "Consulta Multa/Consulta Multa Medellin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Consulta Multa Medellin";
 				PROVISIONING_PROFILE = "4F571495-5D61-47AC-AB6C-C0EC512E297D";
 				WRAPPER_EXTENSION = app;
 			};
@@ -547,8 +547,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Consulta MultaTests/Consulta MultaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Consulta MultaTests/Consulta Multa MedellinTests-Info.plist";
+				PRODUCT_NAME = "Consulta Multa MedellinTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -565,8 +565,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Consulta Multa/Consulta Multa-Prefix.pch";
-				INFOPLIST_FILE = "Consulta MultaTests/Consulta MultaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Consulta MultaTests/Consulta Multa MedellinTests-Info.plist";
+				PRODUCT_NAME = "Consulta Multa MedellinTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -575,7 +575,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		26595A9418E3219500EF6AEC /* Build configuration list for PBXProject "Consulta Multa" */ = {
+		26595A9418E3219500EF6AEC /* Build configuration list for PBXProject "Consulta Multa Medellin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26595AC318E3219500EF6AEC /* Debug */,
@@ -584,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26595AC518E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta Multa" */ = {
+		26595AC518E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta Multa Medellin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26595AC618E3219500EF6AEC /* Debug */,
@@ -593,7 +593,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26595AC818E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta MultaTests" */ = {
+		26595AC818E3219500EF6AEC /* Build configuration list for PBXNativeTarget "Consulta Multa MedellinTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26595AC918E3219500EF6AEC /* Debug */,
