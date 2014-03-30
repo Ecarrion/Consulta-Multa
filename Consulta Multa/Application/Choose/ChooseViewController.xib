@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="uWt-iX-7mt" userLabel="Plain Segmented Control - Placa, Usuario">
-                    <rect key="frame" x="76" y="22" width="169" height="29"/>
+                    <rect key="frame" x="76" y="13" width="169" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="Placa"/>
@@ -32,7 +32,7 @@
                     </connections>
                 </segmentedControl>
                 <segmentedControl opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Hdm-bU-FJe">
-                    <rect key="frame" x="23" y="70" width="274" height="29"/>
+                    <rect key="frame" x="23" y="61" width="274" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="C.C." width="50"/>
@@ -46,7 +46,7 @@
                     </connections>
                 </segmentedControl>
                 <view contentMode="scaleToFill" id="dLE-7C-RDc">
-                    <rect key="frame" x="0.0" y="70" width="320" height="56"/>
+                    <rect key="frame" x="0.0" y="57" width="320" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placa" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wHr-dD-f8w">

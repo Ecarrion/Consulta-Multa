@@ -315,12 +315,17 @@
     //Ad hoc solution for knowing if the politicas jsp was invoked
     NSString * string = self.webView.request.URL.absoluteString;
     if ([string rangeOfString:@"politicas.jsp"].location != NSNotFound) {
-        
+    
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Lo sentimos" message:@"La sesión ha expirado. Por favor intenta nuevamente." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         
         self.completionlBlock = nil;
-        [self popToRootViewControllerAnimated:YES];
+        if (self.viewControllers.count > 1) {
+            [self popToRootViewControllerAnimated:YES];
+        } else {
+            [self.viewControllers.firstObject viewWillAppear:YES];
+        }
+        
         return;
     }
     
