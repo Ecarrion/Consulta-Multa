@@ -319,8 +319,8 @@
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Lo sentimos" message:@"La sesión ha expirado. Por favor intenta nuevamente." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         
-        [self popToRootViewControllerAnimated:YES];
         self.completionlBlock = nil;
+        [self popToRootViewControllerAnimated:YES];
         return;
     }
     
