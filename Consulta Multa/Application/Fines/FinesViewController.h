@@ -14,6 +14,7 @@
     __weak IBOutlet UILabel *infoLabel;
     __weak IBOutlet UIImageView *imageView;
     
+    
 }
 
 

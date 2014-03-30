@@ -11,7 +11,14 @@
 @interface ChooseViewController : UIViewController {
     
     
+    __weak IBOutlet UIView *valueHolder;
     __weak IBOutlet UITextField *plateTextField;
+    __weak IBOutlet UILabel *label;
+    
+    
+    __weak IBOutlet UISegmentedControl *typeSegmented;
+    __weak IBOutlet UISegmentedControl *userIDSegmented;
+    
     
 }
 

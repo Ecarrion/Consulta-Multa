@@ -34,6 +34,12 @@
     
     if ([plateTextField respondsToSelector:@selector(setTintColor:)]) {
         plateTextField.tintColor = GREEN_APP_COLOR;
+        
+        
+    } else {
+        
+        typeSegmented.tintColor = GREEN_APP_COLOR;
+        userIDSegmented.tintColor = GREEN_APP_COLOR;
     }
     
 }
@@ -82,7 +88,49 @@
     return [textField resignFirstResponder];
 }
 
-#pragma mark - Status Bar
+#pragma mark - Segmented Controls
+
+- (IBAction)typeChanged:(id)sender {
+    
+    switch (typeSegmented.selectedSegmentIndex) {
+            
+        case 0: {
+            
+            [UIView animateWithDuration:0.3 animations:^{
+               
+                userIDSegmented.alpha = 0;
+                valueHolder.frame = CGRectOffset(valueHolder.frame, 0, -40);
+                label.text = @"Placa";
+                plateTextField.keyboardType = UIKeyboardTypeAlphabet;
+                [plateTextField reloadInputViews];
+            }];
+            
+            break;
+        }
+            
+        case 1: {
+            
+            [UIView animateWithDuration:0.3 animations:^{
+                
+                userIDSegmented.alpha = 1;
+                valueHolder.frame = CGRectOffset(valueHolder.frame, 0, 40);
+                label.text = @"Número";
+                plateTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+                [plateTextField reloadInputViews];
+            }];
+            
+            break;
+        }
+            
+            
+        default:
+            break;
+    }
+}
+
+
+- (IBAction)documentChanged:(id)sender {
+}
 
 
 #pragma mark - Memory
