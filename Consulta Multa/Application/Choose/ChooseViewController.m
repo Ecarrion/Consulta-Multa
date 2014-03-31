@@ -57,7 +57,7 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    
+    __block BOOL loading = YES;
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
     [self.consultaController selectSearchCriteria:1 onCompletion:^(NSError *error) {
        
@@ -65,6 +65,7 @@
             
             [self.consultaController setPlate:textField.text onCompletion:^(NSError *error) {
                 [SVProgressHUD dismiss];
+                loading = NO;
                 
                 if (!error) {
                     
@@ -81,9 +82,20 @@
         } else {
             
             [self.consultaController handleError:error];
+            loading = NO;
         }
         
     }];
+    
+    //Little hack for dismissing the HUD if app is stucked
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        if (loading) {
+            
+            [SVProgressHUD popActivity];
+            loading = NO;
+        }
+    });
     
     return [textField resignFirstResponder];
 }
