@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    kPlate = 1,
+    kUser = 2,
+} SearchCriteriaType;
+
+typedef enum : NSUInteger {
+    kCC = 1,
+    kCE,
+    kNIT,
+    kPassport,
+    kTI,
+} IdType;
+
 typedef void(^webCompletionBlock)(NSError * error);
 
 @interface ConsultaNavigationViewController : UINavigationController {
@@ -16,8 +29,9 @@ typedef void(^webCompletionBlock)(NSError * error);
 }
 
 -(void)reloadBaseUrlOnCompletion:(webCompletionBlock)block;
--(void)selectSearchCriteria:(NSInteger)number onCompletion:(webCompletionBlock)block;
+-(void)selectSearchCriteria:(SearchCriteriaType)type onCompletion:(webCompletionBlock)block;
 -(void)setPlate:(NSString *)plate onCompletion:(webCompletionBlock)block;
+-(void)setID:(NSString *)id forIdType:(IdType)type onCompletion:(webCompletionBlock)block;
 -(void)selectAddress:(NSInteger)addresIndex onCompletion:(webCompletionBlock)block;
 -(void)openPDFAtIndex:(NSInteger)index onCompletion:(webCompletionBlock)block;
 -(BOOL)getToManyAttepmsError;

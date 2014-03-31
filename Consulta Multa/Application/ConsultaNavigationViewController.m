@@ -128,17 +128,18 @@
     [self.webView loadRequest:request];
 }
 
--(void)selectSearchCriteria:(NSInteger)number  onCompletion:(webCompletionBlock)block {
+-(void)selectSearchCriteria:(SearchCriteriaType)type  onCompletion:(webCompletionBlock)block {
     
     self.completionlBlock = block;
     
     NSString * line1 = @"select = document.getElementsByName(\"criterioBusqueda\")[0];";
-    NSString * line2 = [NSString stringWithFormat:@"select.options[%ld].selected = true;", (long)number];
+    NSString * line2 = [NSString stringWithFormat:@"select.options[%ld].selected = true;", (long)type];
     NSString * line3 = @"document.ConsultarComparendoElectronicoForm.submit();";
     NSString * js = [NSString stringWithFormat:@"%@ %@ %@", line1, line2, line3];
     
     [self.webView stringByEvaluatingJavaScriptFromString:js];
 }
+
 
 -(void)setPlate:(NSString *)plate onCompletion:(webCompletionBlock)block {
     
@@ -149,6 +150,21 @@
     NSString * line3 = @"consultarBut = document.getElementsByClassName(\"button\")[0];";
     NSString * line4 =  @"consultarBut.click();";
     NSString * js = [NSString stringWithFormat:@"%@ %@ %@ %@", line1, line2, line3, line4];
+    
+    [self.webView stringByEvaluatingJavaScriptFromString:js];
+}
+
+-(void)setID:(NSString *)id forIdType:(IdType)type onCompletion:(webCompletionBlock)block {
+    
+    self.completionlBlock = block;
+ 
+    NSString * line1 = @"select = document.getElementById(\"listaTipoIdentificacion\").getElementsByTagName(\"select\")[0];";
+    NSString * line2 = [NSString stringWithFormat:@"select.options[%ld].selected = true;", (long)type];
+    NSString * line3 = @"idField = document.getElementsByName(\"nroIdentificacion\")[0];";
+    NSString * line4 = [NSString stringWithFormat:@"idField.value = \"%@\";", id];
+    NSString * line5 = @"consultarBut = document.getElementsByClassName(\"button\")[0];";
+    NSString * line6 =  @"consultarBut.click();";
+    NSString * js = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@", line1, line2, line3, line4, line5, line6];
     
     [self.webView stringByEvaluatingJavaScriptFromString:js];
 }

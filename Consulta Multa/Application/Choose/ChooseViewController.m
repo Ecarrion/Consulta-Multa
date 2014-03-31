@@ -59,25 +59,49 @@
     
     __block BOOL loading = YES;
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
-    [self.consultaController selectSearchCriteria:1 onCompletion:^(NSError *error) {
+    SearchCriteriaType type = typeSegmented.selectedSegmentIndex + 1;
+    [self.consultaController selectSearchCriteria:type onCompletion:^(NSError *error) {
        
         if (!error) {
             
-            [self.consultaController setPlate:textField.text onCompletion:^(NSError *error) {
-                [SVProgressHUD dismiss];
-                loading = NO;
+            if (type == kPlate) {
                 
-                if (!error) {
+                [self.consultaController setPlate:textField.text onCompletion:^(NSError *error) {
+                    [SVProgressHUD dismiss];
+                    loading = NO;
                     
-                    SelectAddressViewController * savc = [[SelectAddressViewController alloc] init];
-                    [self.navigationController pushViewController:savc animated:YES];
-                    
-                } else {
-                    
-                    [self.consultaController handleError:error];
-                }
+                    if (!error) {
+                        
+                        SelectAddressViewController * savc = [[SelectAddressViewController alloc] init];
+                        [self.navigationController pushViewController:savc animated:YES];
+                        
+                    } else {
+                        
+                        [self.consultaController handleError:error];
+                    }
+                }];
+            }
+            
+            else if (type == kUser) {
                 
-            }];
+                IdType idType = userIDSegmented.selectedSegmentIndex + 1;
+                [self.consultaController setID:textField.text forIdType:idType onCompletion:^(NSError *error) {
+                    
+                    [SVProgressHUD dismiss];
+                    loading = NO;
+                    
+                    if (!error) {
+                        
+                        SelectAddressViewController * savc = [[SelectAddressViewController alloc] init];
+                        [self.navigationController pushViewController:savc animated:YES];
+                        
+                    } else {
+                        
+                        [self.consultaController handleError:error];
+                    }
+                    
+                }];
+            }
             
         } else {
             
@@ -88,7 +112,7 @@
     }];
     
     //Little hack for dismissing the HUD if app is stucked
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         if (loading) {
             
