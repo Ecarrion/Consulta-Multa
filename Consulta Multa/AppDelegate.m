@@ -10,10 +10,14 @@
 #import "ConsultaNavigationViewController.h"
 #import "ChooseViewController.h"
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    
+    BOOL firstTime;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    firstTime = YES;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     ChooseViewController * cvc = [[ChooseViewController alloc] init];
@@ -45,6 +49,13 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    UINavigationController * navController = (UINavigationController *)self.window.rootViewController;
+    if (!firstTime && [[navController viewControllers] count] == 1) {
+        [navController.viewControllers.firstObject viewWillAppear:YES];
+    }
+    
+    firstTime = NO;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

@@ -73,14 +73,14 @@
                     
                 } else {
                     
-                    puts("finished with error");
+                    [self.consultaController handleError:error];
                 }
                 
             }];
             
         } else {
             
-            [SVProgressHUD dismiss];
+            [self.consultaController handleError:error];
         }
         
     }];

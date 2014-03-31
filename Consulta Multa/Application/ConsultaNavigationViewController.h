@@ -25,6 +25,7 @@ typedef void(^webCompletionBlock)(NSError * error);
 -(void)showWebView;
 -(void)hideWebView;
 
+-(void)handleError:(NSError *)error;
 
 -(NSArray *)getAddresses;
 -(NSArray *)getFines;

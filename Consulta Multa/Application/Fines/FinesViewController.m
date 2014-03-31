@@ -83,6 +83,7 @@
         } else {
             
             [SVProgressHUD dismiss];
+            [self.consultaController handleError:error];
         }
     }];
 }

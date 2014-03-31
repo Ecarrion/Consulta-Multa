@@ -295,6 +295,18 @@
     return NO;
 }
 
+-(void)handleError:(NSError *)error {
+    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
+    
+    if (self.viewControllers.count > 1) {
+        [self popToRootViewControllerAnimated:YES];
+    } else {
+        [self.viewControllers.firstObject viewWillAppear:YES];
+    }
+}
+
 
 #pragma mark - WebView
 

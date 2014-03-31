@@ -75,6 +75,10 @@
             FinesViewController * fvc = [[FinesViewController alloc] init];
             UIViewController * first = self.navigationController.viewControllers.firstObject;
             [self.navigationController setViewControllers:@[first, fvc] animated:YES];
+            
+        } else {
+            
+            [self.consultaController handleError:error];
         }
     }];
 }
