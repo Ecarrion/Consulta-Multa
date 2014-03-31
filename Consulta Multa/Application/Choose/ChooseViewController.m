@@ -155,6 +155,7 @@
 
 - (IBAction)typeChanged:(id)sender {
     
+    plateTextField.text = @"";
     switch (typeSegmented.selectedSegmentIndex) {
             
         case 0: {
