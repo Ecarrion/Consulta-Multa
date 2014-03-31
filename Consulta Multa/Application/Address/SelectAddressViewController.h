@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectAddressViewController : UIViewController {
+@interface SelectAddressViewController : GAITrackedViewController {
     
     __weak IBOutlet UITableView *addressTableView;
     __weak IBOutlet UIButton *continueButton;
