@@ -12,9 +12,20 @@
 
 #define GREEN_APP_COLOR [UIColor colorWithRed:0 green:120.f/255.f blue:124.f/255.f alpha:1.f]
 
+#define APP_STORE_URL_STRING @"http://goo.gl/6cqweV"
+#define SEARCH_BANNER_UNIT_ID @"ca-app-pub-4837743190127716/3865467184"
+#define ADDRESS_BANNER_UNIT_ID @"ca-app-pub-4837743190127716/5342200380"
+#define FINES_BANNER_UNIT_ID @"ca-app-pub-4837743190127716/6818933585"
+#define FINE_INTERSTITIAL_UNIT_ID @"ca-app-pub-4837743190127716/8295666788"
+#define GOOGLE_ANALYTICS_ID @"UA-4850795-5"
+
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "UIViewController+Consulta.h"
+    #import "AppDelegate.h"
     #import <SVProgressHUD.h>
+    #import <GAI.h>
+    #import <GAIDictionaryBuilder.h>
+    #import <Google-AdMob-Ads-SDK/GADBannerView.h>
 #endif

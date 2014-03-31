@@ -17,6 +17,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+#ifdef DEBUG
+    //Ads
+    [GADRequest request].testDevices = @[GAD_SIMULATOR_ID];
+    [[GAI sharedInstance] setDryRun:YES];
+#endif
+    
+    //Tracking
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [GAI sharedInstance].dispatchInterval = 120;
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelError];
+    [[GAI sharedInstance] trackerWithTrackingId:GOOGLE_ANALYTICS_ID];
+    
     firstTime = YES;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -63,6 +76,35 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - GAD Delegate
+
+- (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error {
+    
+    //NSLog(@"Error add %@", error);
+    [view  loadRequest:[GADRequest request]];
+}
+
+#pragma mark Click-Time Lifecycle Notifications
+
+
+- (void)adViewWillPresentScreen:(GADBannerView *)adView {
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Ads"     // Event category (required)
+                                                          action:@"Add Will Present Screen"  // Event action (required)
+                                                           label:nil          // Event label
+                                                           value:nil] build]];
+}
+
+- (void)adViewWillLeaveApplication:(GADBannerView *)adView {
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Ads"     // Event category (required)
+                                                          action:@"Add Will Leave App"  // Event action (required)
+                                                           label:nil          // Event label
+                                                           value:nil] build]];
 }
 
 @end

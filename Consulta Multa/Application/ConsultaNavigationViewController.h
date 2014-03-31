@@ -25,7 +25,6 @@ typedef void(^webCompletionBlock)(NSError * error);
 
 @interface ConsultaNavigationViewController : UINavigationController {
     
-    
 }
 
 -(void)reloadBaseUrlOnCompletion:(webCompletionBlock)block;

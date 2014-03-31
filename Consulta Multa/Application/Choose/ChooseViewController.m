@@ -9,7 +9,10 @@
 #import "ChooseViewController.h"
 #import "SelectAddressViewController.h"
 
-@interface ChooseViewController () <UITextFieldDelegate>
+@interface ChooseViewController () <UITextFieldDelegate> {
+    
+    GADBannerView * bannerView;
+}
 
 @end
 
@@ -42,6 +45,7 @@
         userIDSegmented.tintColor = GREEN_APP_COLOR;
     }
     
+    [self createBanner];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -54,6 +58,28 @@
     }];
     
 }
+
+-(void)createBanner {
+    
+    [bannerView removeFromSuperview];
+    bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    bannerView.delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    CGRect frame = bannerView.frame;
+    frame.origin.y = self.view.frame.size.height - frame.size.height;
+    bannerView.frame = frame;
+    
+    // Specify the ad unit ID.
+    bannerView.adUnitID = SEARCH_BANNER_UNIT_ID;
+    
+    // Let the runtime know which UIViewController to restore after taking
+    // the user wherever the ad goes and add it to the view hierarchy.
+    bannerView.rootViewController = self;
+    plateTextField.inputAccessoryView = bannerView;
+    
+    // Initiate a generic request to load it with an ad.
+    [bannerView loadRequest:[GADRequest request]];
+}
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     

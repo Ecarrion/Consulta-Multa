@@ -9,15 +9,22 @@
 #import "ConsultaNavigationViewController.h"
 #import "Fine.h"
 
+#import <GADInterstitial.h>
+
 #define FOTOMULTAS_BASE_URL @"http://www.medellin.gov.co/qxi_tramites/consultas/consultarComparendoElectronico.jsp"
 
-@interface ConsultaNavigationViewController () <UIWebViewDelegate>
+@interface ConsultaNavigationViewController () <UIWebViewDelegate, GADInterstitialDelegate> {
+    
+    GADInterstitial * interstitialView;
+    BOOL readyToSHowAd;
+}
 
 @property (nonatomic, strong) UIWebView * webView;
 @property (nonatomic, strong) UIButton * closeButton;
 @property (nonatomic, strong) UIView * holderView;
 
 @property (nonatomic, copy) webCompletionBlock completionlBlock;
+
 
 @end
 
@@ -79,6 +86,8 @@
     [self.holderView addSubview:self.webView];
     [self.holderView addSubview:self.closeButton];
     [self.view addSubview:self.holderView];
+    
+    [self createInterstitial];
 }
 
 -(void)showWebView {
@@ -115,7 +124,61 @@
         self.holderView.transform = identity;
         [self.webView goBack];
         
+        if (readyToSHowAd) {
+            [interstitialView presentFromRootViewController:self];
+        }
+        
     }];
+}
+
+#pragma mark - Ads
+
+-(void)createInterstitial {
+    
+    interstitialView.delegate = nil;
+    interstitialView = [[GADInterstitial alloc] init];
+    interstitialView.adUnitID = FINE_INTERSTITIAL_UNIT_ID;
+    interstitialView.delegate = self;
+    [interstitialView loadRequest:[GADRequest request]];
+}
+
+
+- (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial {
+    
+    readyToSHowAd = YES;
+    
+}
+- (void)interstitial:(GADInterstitial *)interstitial didFailToReceiveAdWithError:(GADRequestError *)error {
+    
+    readyToSHowAd = NO;
+    [interstitialView loadRequest:[GADRequest request]];
+}
+
+- (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial {
+    
+    readyToSHowAd = NO;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self createInterstitial];
+    });
+}
+
+- (void)interstitialWillPresentScreen:(GADInterstitial *)interstitial {
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Ads"     // Event category (required)
+                                                          action:@"Interstitial Will Present Screen"  // Event action (required)
+                                                           label:nil          // Event label
+                                                           value:nil] build]];
+    
+}
+
+- (void)interstitialWillLeaveApplication:(GADInterstitial *)interstitial {
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Ads"     // Event category (required)
+                                                          action:@"Interstitial Will Leave App"  // Event action (required)
+                                                           label:nil          // Event label
+                                                           value:nil] build]];
 }
 
 #pragma mark - Foto multa methods
