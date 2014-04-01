@@ -9,7 +9,10 @@
 #import "SelectAddressViewController.h"
 #import "FinesViewController.h"
 
-@interface SelectAddressViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface SelectAddressViewController () <UITableViewDataSource, UITableViewDelegate> {
+    
+    GADBannerView * bannerView;
+}
 
 @property (nonatomic, strong) NSArray * addresses;
 
@@ -22,6 +25,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.screenName = @"Address screen";
     }
     return self;
 }
@@ -61,6 +65,27 @@
         self.title = @"Elige tu dirección";
     }
 
+    [self createBanner];
+}
+
+-(void)createBanner {
+    
+    [bannerView removeFromSuperview];
+    bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    bannerView.delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    CGRect frame = bannerView.frame;
+    frame.origin.y = self.view.frame.size.height - frame.size.height;
+    bannerView.frame = frame;
+    
+    // Specify the ad unit ID.
+    bannerView.adUnitID = SEARCH_BANNER_UNIT_ID;
+    
+    // Let the runtime know which UIViewController to restore after taking
+    // the user wherever the ad goes and add it to the view hierarchy.
+    bannerView.rootViewController = self;
+    
+    // Initiate a generic request to load it with an ad.
+    [bannerView loadRequest:[GADRequest request]];
 }
 
 - (IBAction)goPressed:(id)sender {
@@ -89,6 +114,16 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.addresses.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    return bannerView.frame.size.height;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    return bannerView;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

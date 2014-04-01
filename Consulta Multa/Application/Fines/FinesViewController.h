@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FinesViewController : UIViewController {
+@interface FinesViewController : GAITrackedViewController {
     
     
     __weak IBOutlet UILabel *infoLabel;
